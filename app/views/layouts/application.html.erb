@@ -27,9 +27,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzd4fBjS8aS9V3-_tbiyPq9l2
   <body>
     <%= render 'layouts/navigation' unless @navigation_disabled %>
     <%= render 'layouts/header' unless @header_disabled %>
-    <% unless @navigation_disabled %>
-      <%= render 'layouts/sidebar' unless @sidebar_disabled %>
-    <% end %>
     <main role="main" class="main">
       <%= render 'layouts/notifications' %>
       <%= yield %>

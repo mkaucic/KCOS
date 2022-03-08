@@ -1,30 +1,73 @@
-<%= link_to root_path do %>
-  <%= image_tag 'logo.gif' %>
-<% end %>
-<%= render 'layouts/navigation_links' %>
-<% if @foremost_tag %>
-  <%= link_to @foremost_tag.name, tag_path(@foremost_tag.name) %>
-<% end %>
-<% SocialNetwork.all.each do |links| %>
-  <% if links.name == "Facebook" && !links.url.empty? %>
-    <%= link_to links.url, title: links.name do %>
-      <%= image_tag 'icons/facebook.svg' %>
+<nav class="nav--desktop sticky-header">
+  <div class="layout--main flex flex--between">
+    <%= link_to root_path, class:"nav--desktop__logo" do %>
+      <%= image_tag 'logo.gif' %>
     <% end %>
-  <% end %>
-  <% if links.name == "Instagram" && !links.url.empty? %>
-    <%= link_to links.url, title: links.name do %>
-      <%= image_tag 'icons/instagram.svg' %>
+    <%= render 'layouts/navigation_links' %>
+    <% if @foremost_tag %>
+      <%= link_to @foremost_tag.name, tag_path(@foremost_tag.name) %>
     <% end %>
-  <% end %>
-  <% if links.name == "Twitter" && !links.url.empty? %>
-    <%= link_to links.url, title: links.name do %>
-      <%= image_tag 'icons/twitter.svg' %>
+    <% SocialNetwork.all.each do |links| %>
+      <% if links.name == "Facebook" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/facebook.svg' %>
+        <% end %>
+      <% end %>
+      <% if links.name == "Instagram" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/instagram.svg' %>
+        <% end %>
+      <% end %>
+      <% if links.name == "Twitter" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/twitter.svg' %>
+        <% end %>
+      <% end %>
+      <% if links.name == "YouTube" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/youtube.svg' %>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% if links.name == "YouTube" && !links.url.empty? %>
-    <%= link_to links.url, title: links.name do %>
-      <%= image_tag 'icons/youtube.svg' %>
+    <%= render 'layouts/legal_links' %>
+  </div>
+</nav>
+<nav class="nav--mobile">
+  <div class="flex flex--between">
+    <%= link_to root_path, class:"nav--mobile__logo" do %>
+      <%= image_tag 'logo.gif' %>
     <% end %>
-  <% end %>
-<% end %>
-<%= render 'layouts/legal_links' %>
+    <button class="js_burger burger-button">
+      <div class="icon--burger"></div>
+    </button>
+  </div>
+  <div class="js_nav_user nav--mobile__content">
+    <%= render 'layouts/navigation_links' %>
+    <% if @foremost_tag %>
+      <%= link_to @foremost_tag.name, tag_path(@foremost_tag.name) %>
+    <% end %>
+    <% SocialNetwork.all.each do |links| %>
+      <% if links.name == "Facebook" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/facebook.svg' %>
+        <% end %>
+      <% end %>
+      <% if links.name == "Instagram" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/instagram.svg' %>
+        <% end %>
+      <% end %>
+      <% if links.name == "Twitter" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/twitter.svg' %>
+        <% end %>
+      <% end %>
+      <% if links.name == "YouTube" && !links.url.empty? %>
+        <%= link_to links.url, title: links.name do %>
+          <%= image_tag 'icons/youtube.svg' %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= render 'layouts/legal_links' %>
+  </div>
+</nav>

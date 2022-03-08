@@ -1,3 +1,3 @@
-<%= image_tag !@about_us.image.file.exists? ? 'photos/4.png' : @about_us.image %>
+<%= image_tag defined?(@about_us.image.file) ? @about_us.image : 'photos/4.png' %>
 <%= @about_us_title %>
 <%= @about_us_body.html_safe %>

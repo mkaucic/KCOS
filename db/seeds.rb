@@ -196,4 +196,9 @@ PostCategory.create!(name: 'Izložba')
 print '✅'
 puts ''
 
+print 'Legals..........................'
+Legal.create!(privacy_policy: Faker::Lorem.paragraph, impresum: Faker::Lorem.paragraph, gdpr: Faker::Lorem.paragraph)
+print '✅'
+puts ''
+
 puts 'Seeding Completed Succesfully!  🥳'

@@ -1,0 +1,71 @@
+<%= form_for [:admin, @event] do |form| %>
+
+<div class="form__field">
+  <%= form.label :headline, "Naslov", class: "label" %>
+  <%= form.text_field :headline, id: :event_headline, class: "input"%>
+
+  <%= form.label :text, "Tekst događaja", class: "label" %>
+  <%= form.text_area :text, id: :event_text, :rows => 10, :cols => 5, :class => "tinymce"%>
+  <em><%= form.label "Ukoliko želite dodati tagove u objavu ispred riječi stavite znak # (#tag), izbjegavati dijakritičke znakove", class: "label" %></em>
+
+  <%= form.label :brief, "Kratki opis", class: "label" %>
+  <%= form.text_field :brief, id: :event_brief, class: "input"%>
+
+  <%= form.label :start_date, "Pocetni datum", class: "label"  %>
+  <%= form.text_field :start_date, id: "from", class: "input" %>
+  
+  <%= form.label :end_date, "Krajnji datum", class: "label" %>
+  <%= form.text_field :end_date, id: "to", class: "input" %>
+
+  <%= form.label :starting_at, "Vrijeme početka", class: "label"  %>
+  <%= form.time_select :starting_at, id: :event_starting_at%>
+
+  <%= form.label :event_type, "Vrsta događaja", class: "label" %>
+  <%= form.select :event_type, PostCategory.all.collect { |category| [ category.name ] } , {}, {class: "input"} %>
+
+  <%= form.label :price, "Vrsta događaja - cijena", class: "label" %>
+  <%= form.select :price, ["Kupi ulaznicu", "Besplatan program"] , {}, {class: "input"} %>
+
+  <%= form.label :starred, "Top Događaj", class: "label"  %>
+  <%= form.check_box :starred, id: :event_starred%>
+
+  <div class="js_part js_basic_info">
+     <div class="field input__field--text">
+        <%= form.label :image, "Naslovna slika događaja", class: "label" %>
+        <div class="image_field">
+           <p class="text--center"><%= t('image_upload') %></p>
+           <img src="<%= form.object.image_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+           <%= form.file_field :image, class: "image_file_field" %>
+        </div>
+     </div>
+  </div>
+
+  <%= form.label :slug, class: "label" %>
+  <%= form.text_field :slug, id: :event_slug, class: "input", reuqired: true %>
+
+   <div class="form__field">
+    <%= form.submit "Spremi", class: "btn btn--primary"%>
+    <% if defined?(@toggle_edit_button) %>
+      <%= link_to "Uredi galeriju", admin_event_event_images_path(@event.slug), class: "btn btn--primary btn" %>
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+<script type="text/javascript">
+    $("#event_headline, #event_slug").on("change", function(){
+    var title = $(this).val();
+    title = title.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s/g, "-");
+    $("#event_slug").val(title);
+  })
+  $("#event_slug").on("blur", function(){
+    if($(this).val() == ""){
+      var title = $("#event_headline").val();
+      title = title.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s/g, "-");
+      $(this).val(title);
+    }
+  })
+  init_datepicker();
+
+  load_tiny ("<%= I18n.locale %>");
+</script>

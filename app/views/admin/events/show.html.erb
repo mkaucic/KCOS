@@ -1,0 +1,32 @@
+<header class="header header--small">
+  <%= link_to admin_events_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= "Događanja" %></h1>
+    <p><%= "Prikaz događaja"%></p>
+  </div>
+</header>
+
+
+<div class="section__wrap--6">
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit">
+      <%= link_to edit_admin_event_path(@event.slug), class: "btn btn--edit" do %>
+        <%= inline_svg "icons/pen-group-3.svg" %>
+      <% end %>
+      <%= link_to admin_event_path(@event.slug), method: :delete, data: { confirm: "Jesi li siguran?" }, class: "btn btn--remove" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+    <div class="section__content">
+	    <p><%=@event.event_type %></p>
+		<strong><p><%=@event.headline %></p></strong>
+		<p><%=sanitize @event.text %></p>
+		<p><%=@event.start_date.to_formatted_s(:custom)  %> <%="- " + @event.end_date.to_formatted_s(:custom) if @event.end_date != nil %> </p>
+	    <p><%=@event.starting_at.to_s(:time) if @event.starting_at != nil %> </p>  
+    </div>
+    <%= image_tag @event.image, class: 'small' %>
+  </section>
+</div>

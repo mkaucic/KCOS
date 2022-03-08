@@ -1,0 +1,18 @@
+<%= link_to news_articles_path do %>
+  <%= inline_svg 'icons/flag--black.svg' %>
+  Top novosti
+<% end %>
+<% @news.each do |news| %>
+  <% unless news.blank? %>
+    <% if news.respond_to?(:news_type) %>
+      <%= image_tag news.image unless news.image.blank? %>
+      <%=news.publish_date.to_formatted_s(:custom)  %>
+      <%=news.news_type%>
+      <%= link_to news.headline, news_article_path(news.slug) %>
+      <% unless news.brief.nil? %>
+        <%= sanitize news.brief %>
+      <% end %>
+      <% next %>
+    <% end %>
+  <% end %>
+<% end %>

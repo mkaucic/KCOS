@@ -1,0 +1,9 @@
+<div class="table__item--wrap js_action_log" data-date="<%= action_log.created_at.strftime('%d.%m.%Y.') %>">
+  <div class="table__item col col--1"><%= action_log.created_at.strftime("%H:%M") %></div>
+  <div class="table__item col col--1 account--activity">
+  	<%= image_tag action_log.admin.image_url, class: "log_action__admin_identicon activity__img" if action_log.admin_id %>
+			<%= log_admin(action_log) %>
+		</div>
+  <div class="table__item col col--1"><%= log_object(action_log) %></div>
+  <div class="table__item col col--3"><div class="<%= action_log_class(action_log.action) %>"></div><%= t(action_log.action) %></div>
+</div>

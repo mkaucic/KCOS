@@ -1,0 +1,64 @@
+en:
+  #RESOURCE TRANSLATIONS#
+  admin:
+    new_record: "New admin"
+    number_of_logins: "Number of logins"
+  contact_message:
+    contact_us_heading: "Contact Us"
+    subject: "New contact message"
+    disable: "Sending..."
+    sent: "Message sent"
+  contact_info:
+    map_coordinates: "Map coordinates (if left blank map won't show)."
+#RESOURCE FIELDS#
+  activerecord:
+    attributes:
+      admin:
+        first_name: "First name "
+        last_name: "Last name "
+        email: "Email adresa "
+        role: "Role "
+        password: "Password "
+        password_confirmation: "Password confirmation "
+        image: "Image "
+        current_password: "Trenutna lozinka"
+      contact_message:
+        full_name: "Name"
+        email: "Email"
+        message: "Content"
+      contact_info:
+        name: "Name"
+        address: "Address"
+        email: "Email"
+        phone: "Phone"
+        latitude: "Zemljopisna širina (latitude)"
+        longitude: "Zemljopisna dužina (longitude)"
+#RESOURCE ERRORS#
+    errors:
+      models:
+        admin: 
+          attributes:
+            first_name:
+              blank: "can't be blank!"
+            last_name:
+              blank: "can't be blank!"
+            email:
+              blank: "can't be blank!"
+              invalid: "format is invalid!"
+        contact_message:
+          attributes:
+            full_name:
+              blank: "Name can't be blank!"
+            email:
+              blank: "Email can't be blank!"
+              invalid: "Email format is invalid!"
+            message:
+              blank: "Message can't be blank!"
+        contact_info:
+          attributes:
+            name:
+              blank: "Name can not be blank"
+            address:
+              blank: "Address can not be blank"
+            email:
+              blank: "Email can not be blank"

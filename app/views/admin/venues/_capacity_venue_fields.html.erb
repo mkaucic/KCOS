@@ -1,0 +1,12 @@
+<fieldset class="margin--bottom fieldset">
+    <div class="field input__field--text">
+    <%= form.label :name, "Ime", class: "label" %>
+    <%= form.text_field :name, id: :capacity_venue_name, class: "input"%>
+  </div>
+  <div class="field input__field--text">
+    <%= form.label :capacity, "Kapacitet", class: "label" %>
+    <%= form.text_field :capacity, id: :capacity_venue_capacity, class: "input"%>
+  </div>
+  <%= form.hidden_field :_destroy %>
+  <%= link_to t('delete'), '#', class: "remove_fields link", data: {obj: form.object} %>
+</fieldset>

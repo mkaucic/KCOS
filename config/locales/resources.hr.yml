@@ -1,0 +1,105 @@
+hr:
+#RESOURCES
+  resources:
+    contact_info: "Kontakt Podaci"
+  action_log:
+    time: "Vrijeme"
+    account: "Profil"
+    record: "Zapis"
+    action: "Radnja"
+    no_recorded_activities: "Nema zabilježenih aktivnosti"
+  admin:
+    new_record: "Novi korisnik"
+    first_name: "Ime "
+    profile: "Profil"
+    last_name: "Prezime"
+    email: "Email adresa "
+    role: "Uloga "
+    password: "Lozinka "
+    password_confirmation: "Potvrda lozinke "
+    image: "Slika "
+    number_of_logins: "Broj pristupa"
+    number_of_logs: "Broj izmjena"
+    resource_permissions: "Moderatorske ovlasti"
+  contact_message:
+    name: "Ime: "
+    email: "Email: "
+    content: "Sadržaj: "
+    disable: "Molimo pričekajte..."
+    was_send: "Poruka uspješno poslana!"
+  contact_info:
+    editing: "Uređivanje kontakt podataka"
+  contact_info:
+    map_coordinates: "Koordinate karte"
+    map_coordinates_desc: "Ako ostavite prazno karta se neće prikazati."
+#RESOURCE PERMISSIONS#
+  resource_permissions:
+    admin: "Administrator"
+    admin_description: "Administrator ima sve dolje navedene ovlasti"
+    admin_accounts: "Korisnički računi"
+    admin_accounts_description: "Pregled i upravljanje korisničkim računima"
+    contact_messages: "Kontakt poruke"
+    contact_messages_description: "Čitanje poruka poslanih sa web stranica"
+#RESOURCE TRANSLATIONS#
+  admin:
+    new_record: "Novi korisnik"
+    number_of_logins: "Broj pristupa"
+    profile: "Profil"
+    resource_permissions: "Moderatorske ovlasti"
+  contact_message:
+    contact_us_heading: "Kontaktirajte nas"
+    subject: "Nova kontakt poruka"
+    disable: "Poruka se šalje..."
+    sent: "Poruka poslana"
+#RESOURCE FIELDS#
+  activerecord:
+    attributes:
+      admin:
+        first_name: "Ime "
+        last_name: "Prezime"
+        email: "Email adresa "
+        role: "Uloga "
+        password: "Lozinka "
+        password_confirmation: "Potvrda lozinke "
+        image: "Slika "
+        remember_me: "Zapamti moju prijavu"
+      contact_message:
+        full_name: "Ime"
+        email: "Email"
+        message: "Poruka"
+      contact_info:
+        name: "Naziv"
+        address: "Adresa"
+        email: "Email"
+        phone: "Telefon"
+        latitude: "Zemljopisna širina (latitude)"
+        longitude: "Zemljopisna dužina (longitude)"
+#RESOURCE ERRORS#
+    errors:
+      models:
+        admin:
+          attributes:
+              first_name:
+                blank: "ne može biti prazno!"
+              last_name:
+                blank: "ne može biti prazno!"
+              email:
+                blank: "ne može biti prazna!"
+                invalid: "nije ispravna!"
+        contact_message:
+          attributes:
+            full_name:
+              blank: "Polje ime ne može biti prazno!"
+            email:
+              blank: "Polje email ne može biti prazno!"
+              invalid: "Format emaila ne valja!"
+            message:
+              blank: "Polje sadržaj ne može biti prazno!"
+        contact_info:
+          attributes:
+            name:
+              blank: "Naziv ne može ostati prazan"
+            address:
+              blank: "Adresa ne može ostati prazna"
+            email:
+              blank: "Email ne može ostati neispunjen"

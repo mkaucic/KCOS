@@ -1,0 +1,37 @@
+<header class="header">
+ 	<h1><%= "Galerija za člana tima - " %> <em><%= @team.name %></em> </h1>
+ 	<%= link_to 'Povratak na o nama', admin_about_us_path, class: "btn btn--primary btn" %>
+
+</header>
+
+
+<section class="section section--12 section--double">
+
+	<%= form_for [:admin_team, @team_image], html: { multipart: true, class: "dropzone", id: "my-dropzone" } do |f| %>
+		<div class="dz-message" >
+			<h3><%= "Povucite datoteku ovdje" %></h3>
+			<%= "ili kliknite za upload" %>
+		</div>
+		<div class="fallback">
+			<%= f.file_field :team_image %>
+			<%= f.submit "Spremi sliku" %>
+		</div>
+	<% end %>
+
+	<div id="previews" class="preview__container sortable" data-url="<%= sort_admin_team_team_images_path(@team) %>">
+		<% @team_images.each do |team_image| %>
+			<div id="<%= dom_id(team_image) %>" class="preview-team_image__wrapper">
+				<div class="js_team_image_wrapper preview-team_image" data-id="<%= team_image.id %>">
+					<%= image_tag team_image.image_url(:medium), height: 150 %><br/>
+				</div>
+				<%= link_to "Obriši", admin_team_team_image_path(@team.id, team_image), method: :delete, remote: true, class: 'preview-button btn--remove' %>
+			</div>
+		<% end %>
+	</div>
+
+</section>
+
+
+<script>
+	TeamImageDZ();
+</script>

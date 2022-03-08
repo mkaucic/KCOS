@@ -1,0 +1,19 @@
+<%= link_to events_path, class: 'btn btn--icon btn--on-top btn--black' do %>
+  <%= inline_svg 'icons/date--black.svg' %>
+  Top događanja
+<% end %>
+<% @event.each do |events| %>
+  <% unless events.blank? %>
+    <%= image_tag events.image, class: 'full--width object-fit--cover' unless events.image.blank? %>
+    <%= events.start_date.to_formatted_s(:custom)  %>
+    <% if events.end_date %>
+      <%= "- " + events.end_date.to_formatted_s(:custom) %>
+    <% end %>
+    <% if events.starting_at %>
+      <%= " @ " + events.starting_at.to_s(:time) %>
+    <% end %>
+    <%=events.event_type%>
+    <%= link_to events.headline, event_path(events.slug), class: 'link link--black' %>
+    <%=link_to events.price, "#", target: "_blank", class: 'btn btn--black text--uppercase btn--small text--center' %>
+  <% end %>
+<% end %>

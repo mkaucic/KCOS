@@ -1,0 +1,29 @@
+<%= form_for [:admin, @team] do |form| %>
+  <div class="field input__field--text">
+    <%= form.label :name, "Ime", class: "label" %>
+    <%= form.text_field :name, id: :team_name, class: "input"%>
+  </div>
+  <div class="field input__field--text">
+    <%= form.label :role, "Položaj", class: "label" %>
+    <%= form.text_field :role, id: :team_role, class: "input"%>
+  </div>
+  <%= form.label :bio, "Bio", class: "label" %>
+  <%= form.text_area :bio, id: :team_bio, :rows => 10, :cols => 5, :class => "tinymce"%>
+  <div class="js_part js_basic_info">
+     <div class="field input__field--text">
+        <%= form.label :image, "Fotografija", class: "label" %>
+        <div class="image_field">
+           <p class="text--center"><%= t('image_upload') %></p>
+           <img src="<%= form.object.image_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+           <%= form.file_field :image, class: "image_file_field" %>
+        </div>
+     </div>
+  </div>
+  <div style ="display: inline" >
+     <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+  </div>
+<% end %>
+
+<script>
+  load_tiny ("<%= I18n.locale %>");
+</script>

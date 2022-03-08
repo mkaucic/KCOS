@@ -1,0 +1,38 @@
+<header class="header header--small">
+  <%= link_to admin_tags_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= "Tagovi" %></h1>
+    <p><%= "Prikaz svih objava sa tagom " %> <b><%= @tag %></b></p>
+  </div>
+</header>
+
+
+<div class="section__wrap--6">
+  <section class="section section--col section--padded">
+    <div class="section__content">
+      <% if defined?(@posts_events) %>
+        <hr>
+        <h2>Događaji</h2>
+        <% @posts_events.each do |post| %>
+          <% if post.respond_to?(:event_type) %>
+            <p><strong><%= link_to post.headline, admin_event_path(post.slug) %></strong></p>
+            <%= post.brief %>
+          <% end %> 
+        <% end %>
+      <% end %>
+      <% if defined?(@posts_news) %>  
+        <hr>
+        <h2>Novosti</h2>
+        <% @posts_news.each do |post| %>
+          <% if post.respond_to?(:news_type) %>
+            <p><strong><%= link_to post.headline, admin_news_article_path(post.slug) %></strong></p>
+            <%= post.brief %>
+          <% end %> 
+        <% end %> 
+      <% end %>
+    </div>
+  </section>
+</div>

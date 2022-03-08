@@ -1,0 +1,16 @@
+<header class="header header--small">
+	<%= link_to admin_social_networks_path, class: "btn btn--back" do %>
+		<div class="arrow--left"></div>
+	<% end %>
+
+	<div class="header__content">
+		<h1>Društvene mreže</h1>
+    	<p>Dodaj poveznicu društvene mreže</p>
+	</div>
+</header>
+
+<section class="section section--6 section--padded">
+	<%= render 'form', post: @social_network %>
+</section>
+
+

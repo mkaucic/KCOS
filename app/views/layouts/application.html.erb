@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+  <head>
+    <title><%= AppInfo.title %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : AppInfo.desc %>" />
+    <meta name="keywords" content='<%= AppInfo.keywords%>' />
+    <meta name="author" content="Bamboo Lab" />
+    <meta name="image" content="<%= content_for?(:image) ? image_url(yield(:image)) : image_url('logo.gif') %>"/>
+    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : AppInfo.title %>" />
+    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : AppInfo.desc %>" />
+    <meta property="og:image" content="<%= content_for?(:image) ? yield(:image) : image_url('logo.gif') %>" />
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <%= javascript_include_tag 'application' %>
+    <%= analytics_init if Rails.env.production? %>
+    <%= render 'layouts/shim' %>
+    <!--
+  <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzd4fBjS8aS9V3-_tbiyPq9l2vf8fboS4&callback=initMap"></script>
+  -->
+    <script src="./maps/omaps/OpenLayers.js"></script>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.png' %>
+  </head>
+  <body>
+    <%= render 'layouts/navigation' unless @navigation_disabled %>
+    <%= render 'layouts/header' unless @header_disabled %>
+    <% unless @navigation_disabled %>
+      <%= render 'layouts/sidebar' unless @sidebar_disabled %>
+    <% end %>
+    <main role="main" class="main">
+      <%= render 'layouts/notifications' %>
+      <%= yield %>
+    </main>
+    <%= render 'layouts/footer' unless @footer_disabled %>
+    <%#= raw bamboolab_cookies(button: "OK", text: "#{Rails.application.class.parent_name} koristi kolačiće za pružanje boljeg korisničkog iskustva i funkcionalnosti stranice.", more_link: "http://www.aboutcookies.org/", more_text: "Saznaj više") %>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  </body>
+</html>

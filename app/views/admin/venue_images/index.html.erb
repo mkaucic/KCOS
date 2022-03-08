@@ -1,0 +1,37 @@
+<header class="header">
+ 	<h1><%= "Galerija za prostor - " %> <em><%= @venue.name %></em> </h1>
+ 	<%= link_to 'Povratak na prostore', admin_venues_path, class: "btn btn--primary btn" %>
+
+</header>
+
+
+<section class="section section--12 section--double">
+
+	<%= form_for [:admin_venue, @venue_image], html: { multipart: true, class: "dropzone", id: "my-dropzone" } do |f| %>
+		<div class="dz-message" >
+			<h3><%= "Povucite datoteku ovdje" %></h3>
+			<%= "ili kliknite za upload" %>
+		</div>
+		<div class="fallback">
+			<%= f.file_field :venue_image %>
+			<%= f.submit "Spremi sliku" %>
+		</div>
+	<% end %>
+
+	<div id="previews" class="preview__container sortable" data-url="<%= sort_admin_venue_venue_images_path(@venue) %>">
+		<% @venue_images.each do |venue_image| %>
+			<div id="<%= dom_id(venue_image) %>" class="preview-venue_image__wrapper">
+				<div class="js_venue_image_wrapper preview-venue_image" data-id="<%= venue_image.id %>">
+					<%= image_tag venue_image.image_url(:medium), height: 150 %><br/>
+				</div>
+				<%= link_to "Obriši", admin_venue_venue_image_path(@venue.id, venue_image), method: :delete, remote: true, class: 'preview-button btn--remove' %>
+			</div>
+		<% end %>
+	</div>
+
+</section>
+
+
+<script>
+	VenueImageDZ();
+</script>

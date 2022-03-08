@@ -1,0 +1,35 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.contact_messages') %></h1>
+</header>
+
+<section class="section section--12 section--double no-new-record">
+  <table class="datatable">
+    <thead>
+      <tr class="table__head--wrap">
+        <th class="table__head col col--1"><%= t('date') %></th>
+        <th class="table__head col col--4"><%= t('activerecord.attributes.contact_message.full_name') %></th>
+        <th class="table__head col col--2"><%= t('activerecord.attributes.contact_message.email') %></th>
+        <th class="table__head col col--1"><%= t('actions') %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @contact_messages.each do |contact_message| %>
+        <tr class="table__item--wrap">
+          <td class="table__item table__icon--wrap col col--1" data-sort="<%= contact_message.created_at.strftime("%Y%m%d%H") %>">
+          	<%= contact_message.created_at.strftime("%d/%m/%Y") %>
+          </td>
+          <td class="table__item table__icon--wrap col col--4"><%= contact_message.full_name %></td>
+          <td class="table__item table__icon--wrap col col--2"><%= contact_message.email %></td>
+          <td class="table__item table__icon--wrap col col--1">
+            <%= link_to contact_message.read_by(current_admin) ? t('read_again') : t('read'), [:admin, contact_message], class: "btn btn--full btn--sm", remote: true, id: "js_message_read_link_#{contact_message.id}" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<script>
+  init_datatable({lang: "<%= I18n.locale %>"});
+</script>

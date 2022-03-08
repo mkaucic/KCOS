@@ -1,0 +1,30 @@
+<header class="header header--small">
+  <%= link_to admin_venues_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= "Prostori" %></h1>
+    <p><%= "Prikaz prostora"%></p>
+  </div>
+</header>
+
+<div class="section__wrap--6">
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit">
+      <%= link_to admin_edit_capacities_path(@venue.id), class: "btn btn--edit" do %>
+        <%= inline_svg "icons/pen-group-3.svg" %>
+
+      <% end %>
+      <%= link_to admin_venue_path(@venue.id), method: :delete, data: { confirm: "Jesi li siguran?" }, class: "btn btn--remove" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+    <div class="section__content">
+      <h2> <%= @venue.name %> </h2>
+      <p>  <%= sanitize @venue.description.html_safe %> </p>
+      <div> <%= image_tag @venue.image %> </div>
+      
+    </div>
+  </section>
+</div>

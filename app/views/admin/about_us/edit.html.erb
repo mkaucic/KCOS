@@ -1,0 +1,16 @@
+<header class="header header--small">
+	<%= link_to admin_about_us_path, class: "btn btn--back" do %>
+		<div class="arrow--left"></div>
+	<% end %>
+
+	<div class="header__content">
+		<h1>O nama</h1>
+    	<p>Uredi početni tekst o centru</p>
+	</div>
+</header>
+
+<section class="section section--6 section--padded">
+	<%= render 'form', post: @about_us %>
+</section>
+
+

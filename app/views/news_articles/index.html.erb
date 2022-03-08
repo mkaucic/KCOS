@@ -1,0 +1,29 @@
+<% @news_articles.each_with_index do |news_article, index| %>
+  <% unless news_article.image.blank? %>
+    <%= image_tag news_article.image %>
+  <% end %>
+<% end %>
+<%= link_to all_news_articles_path do %>
+  <%= inline_svg 'icons/flag.svg' %>
+  Sve novosti
+<% end %>
+<% @news_articles.each_with_index do |news_article, index| %>
+  <%= link_to news_article_path(news_article.slug) do %>
+    <%=news_article.news_type%>
+  <% end %>
+  <%= news_article.publish_date.to_formatted_s(:custom) %>
+  <%= link_to news_article_path(news_article.slug) do %>
+    <%= news_article.news_type %>
+  <% end %>
+  <%= link_to news_article_path(news_article.slug) do %>
+    <%= news_article.headline %>
+  <% end %>
+  <% unless news_article.brief.nil? %>
+    <%= sanitize news_article.brief %>
+  <% end %>
+  <%= link_to 'Pročitaj više', news_article_path(news_article.slug) %>
+<% end %>
+<% @starred_count.times do |number|%>
+  <% @inline = ""+"0#{number+1}"+"" %>
+  <%= @inline.html_safe %>
+<% end %>

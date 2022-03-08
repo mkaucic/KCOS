@@ -1,0 +1,5 @@
+<% action_logs.each do |action_log| %>
+	<% unless action_log.loggable_type == "NavElement" && !current_admin.superadmin  %>
+    <%= render 'admin/action_logs/action_log', action_log: action_log %>
+  <% end %>
+<% end %>

@@ -1,0 +1,47 @@
+<header class="header header--double">
+  <h1><%= "Poveznice" %></h1>
+
+  <%= link_to "Nova poveznica", new_admin_link_path, class: "btn btn--primary btn--large" %>
+</header>
+
+
+<section class="section section--12 section--double">
+  
+  <table class="datatable">
+    <thead>
+      <tr class="table__head--wrap">
+        <th class="table__head col col--1"><%= "Ikona" %> </th>
+        <th class="table__head col col--5"><%= "Poveznica" %> </th>
+        <th class="table__head col col--1"><%= "Naziv poveznice" %></th>
+        <th class="table__head col col--1"><%= "Radnje" %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @links.each do |link| %>
+        <tr id=<%= dom_id(link) %> class="table__item--wrap">
+
+          <td class="table__item col col--1" ><%= image_tag link.favicon, class: "sm-icon"%></td>
+
+          <td class="table__item col col--5" ><%= link_to link.link, link.link.html_safe, target: "_blank" %></td>
+
+          <td class="table__item col col--1"><%= link.title %></td>
+          
+          <td class="table__item table__icon--wrap col col--1">
+            <%= link_to edit_admin_link_path(link), class: "table__icon" do %>
+              <%= inline_svg "icons/pen-group-3.svg" %>
+            <% end %>
+
+            <%= link_to admin_link_path(link), method: :delete, data: { confirm: t('delete_confirm') }, class: "table__icon" do %>
+              <%= inline_svg "icons/trash-simple.svg" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<script>
+  init_datatable({lang: "<%= I18n.locale %>"});
+</script>

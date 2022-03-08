@@ -1,0 +1,37 @@
+<header class="header">
+ 	<h1><%= "Galerija za događaj " %> <em><%= @event.headline %></em> </h1>
+ 	<%= link_to 'Povratak na događanja', admin_events_path, class: "btn btn--primary btn" %>
+
+</header>
+
+
+<section class="section section--12 section--double">
+
+	<%= form_for [:admin_event, @event_image], html: { multipart: true, class: "dropzone", id: "my-dropzone" } do |f| %>
+		<div class="dz-message" >
+			<h3><%= "Povucite datoteku ovdje" %></h3>
+			<%= "ili kliknite za upload" %>
+		</div>
+		<div class="fallback">
+			<%= f.file_field :event_image %>
+			<%= f.submit "Spremi sliku" %>
+		</div>
+	<% end %>
+
+	<div id="previews" class="preview__container sortable" data-url="<%= sort_admin_event_event_images_path(@event) %>">
+		<% @event_images.each do |event_image| %>
+			<div id="<%= dom_id(event_image) %>" class="preview-event_image__wrapper">
+				<div class="js_event_image_wrapper preview-event_image" data-id="<%= event_image.id %>">
+					<%= image_tag event_image.image_url(:medium), height: 150 %><br/>
+				</div>
+				<%= link_to "Obriši", admin_event_event_image_path(@event.slug, event_image), method: :delete, remote: true, class: 'preview-button btn--remove' %>
+			</div>
+		<% end %>
+	</div>
+
+</section>
+
+
+<script>
+	EventImageDZ();
+</script>

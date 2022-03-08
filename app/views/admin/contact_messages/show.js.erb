@@ -1,0 +1,8 @@
+$('#modal-injected_content').html("<%= j render 'admin/contact_messages/contact_message', contact_message: @contact_message %>");
+$("#modal").fadeIn();
+$("#js_message_read_link_<%= @contact_message.id %>").text("<%= t('read_again') %>");
+<% if current_admin.unread_messages.any? %>	
+	$(".js_messages_count").text("<%= current_admin.unread_messages.size %>");
+<% else %>
+	$(".js_messages_count").remove();
+<% end %>

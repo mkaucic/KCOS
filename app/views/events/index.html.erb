@@ -1,0 +1,31 @@
+<% @events.each_with_index do |events, index| %>
+  <% unless events.image.blank? %>
+    <%= image_tag events.image %>
+  <% end %>
+<% end %>
+<%= link_to all_events_path do %>
+  <%= inline_svg 'icons/date.svg' %>
+  Sva događanja
+<% end %>
+<% @events.each_with_index do |events, index| %>
+  <%= link_to event_path(events.slug) do %>
+    <%=events.event_type%>
+  <% end %>
+  <%=events.start_date.to_formatted_s(:custom) %> <% if events.end_date %>- <%=events.end_date.to_formatted_s(:custom)  %> <% end %>
+  <% if events.starting_at %>
+    <%=events.starting_at.to_s(:time) %>
+  <% end %>
+  <%= link_to event_path(events.slug) do %>
+    <%= events.event_type %>
+  <% end %>
+  <%= link_to event_path(events.slug) do %>
+    <%= events.headline %>
+  <% end %>
+  <% unless events.brief.nil? %>
+    <%= sanitize events.brief %>
+  <% end %>+
+<% end %>
+<% @starred_count.times do |number|%>
+  <% @inline = ""+"0#{number+1}"+"" %>
+  <%= @inline.html_safe %>
+<% end %>

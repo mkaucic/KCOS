@@ -1,0 +1,37 @@
+<header class="header">
+ 	<h1><%= "Galerija za novost " %> <em><%= @news_article.headline %></em> </h1>
+ 	<%= link_to 'Povratak na novosti', admin_news_articles_path, class: "btn btn--primary btn" %>
+
+</header>
+
+
+<section class="section section--12 section--double">
+
+	<%= form_for [:admin_news_article, @news_article_image], html: { multipart: true, class: "dropzone", id: "my-dropzone" } do |f| %>
+		<div class="dz-message" >
+			<h3><%= "Povucite datoteku ovdje" %></h3>
+			<%= "ili kliknite za upload" %>
+		</div>
+		<div class="fallback">
+			<%= f.file_field :news_article_image %>
+			<%= f.submit "Spremi sliku" %>
+		</div>
+	<% end %>
+
+	<div id="previews" class="preview__container sortable" data-url="<%= sort_admin_news_article_news_article_images_path(@news_article) %>">
+		<% @news_article_images.each do |news_article_image| %>
+			<div id="<%= dom_id(news_article_image) %>" class="preview-news_article_image__wrapper">
+				<div class="js_news_article_image_wrapper preview-news_article_image" data-id="<%= news_article_image.id %>">
+					<%= image_tag news_article_image.image_url(:medium), height: 150 %><br/>
+				</div>
+				<%= link_to "Obriši", admin_news_article_news_article_image_path(@news_article.slug, news_article_image), method: :delete, remote: true, class: 'preview-button btn--remove' %>
+			</div>
+		<% end %>
+	</div>
+
+</section>
+
+
+<script>
+	NewsArticleImageDZ();
+</script>

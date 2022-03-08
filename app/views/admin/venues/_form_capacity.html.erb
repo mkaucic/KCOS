@@ -1,0 +1,33 @@
+<%= form_for [:admin, @venue] do |form| %>
+  <div class="field input__field--text">
+    <%= form.label :name, "Ime", class: "label" %>
+    <%= form.text_field :name, id: :venue_name, class: "input"%>
+  </div>
+  <%= form.label :description, "Opis prostora", class: "label" %>
+  <%= form.text_area :description, id: :venue_description, :rows => 10, :cols => 5, :class => "tinymce"%>
+    <fieldset class="margin--bottom">
+		<%= form.label :capacity_venues, "Kapaciteti", class: "label" %>
+		<%= form.fields_for :capacity_venues do |ff| %>
+		<%= render 'capacity_venue_fields', form: ff %>
+		<% end %>
+		<%= link_to_add_fields("+", form, :capacity_venues)%>
+	</fieldset>
+	
+  <div class="js_part js_basic_info">
+     <div class="field input__field--text">
+        <%= form.label :image, "Fotografija", class: "label" %>
+        <div class="image_field">
+           <p class="text--center"><%= t('image_upload') %></p>
+           <img src="<%= form.object.image_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+           <%= form.file_field :image, class: "image_file_field" %>
+        </div>
+     </div>
+  </div>
+  <div style ="display: inline" >
+     <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+  </div>
+<% end %>
+
+<script>
+  load_tiny ("<%= I18n.locale %>");
+</script>

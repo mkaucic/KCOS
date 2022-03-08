@@ -1,0 +1,9 @@
+<div class="email--wrapper">
+	<h1><%= t('contact_message.subject') %></h1>
+	<p class="margin--bottom message--timestamp"><em><%= @contact_message.created_at.strftime("%d. %m. %Y. - %H:%M") %></em></p>
+	<p><strong><%= t('activerecord.attributes.contact_message.full_name') %></strong>: <%= @contact_message.full_name %></p>
+	<p class="margin--bottom"><strong><%= t('activerecord.attributes.contact_message.email') %></strong>: <%= @contact_message.email %></p>
+	<p><strong><%= t('activerecord.attributes.contact_message.message') %></strong>:</p>
+	<p><em><%= @contact_message.message %></em></p>
+	<div class="email--footer"><%= AppInfo.name %> <%= Date.today.year %></div>
+</div>

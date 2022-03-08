@@ -1,0 +1,66 @@
+<header class="header header--small">
+  <h1><%= t('admin_nav.contact_info') %></h1>
+</header>
+
+<%#= link_to last_log(@contact_info), [:admin, @contact_info.action_logs.last], class: "btn btn--log", remote: true if @contact_info.action_logs.any? %>
+
+<div class="section__wrap--6">
+	<h2 class="main__subtitle--small"><%= t('details') %></h2>
+
+    <div class="js_contact_content">
+		<section class="section section--col section--padded">
+	     
+			<div class="btn__group--edit">
+				<%= link_to edit_admin_contact_info_path(@contact_info), class: "btn btn--edit", remote: true do %>
+					<%= inline_svg "icons/pen-group-3.svg" %>
+				<% end %>
+			</div>
+			<h3><%= @contact_info.name %></h3>
+
+	    	<div id="js_osm" style="height:250px" > </div>
+
+			<ul class="contact__info">
+				<li><%= inline_svg "icons/pin-3-3.svg", class: 'contact__icon' %> <%= @contact_info.address %></li>
+				<li><%= inline_svg "icons/at-sign.svg", class: 'contact__icon' %> <%= mail_to @contact_info.email, @contact_info.email, class: "link" %></li>
+				<li><%= inline_svg "icons/phone-2.svg", class: 'contact__icon' %> <%= @contact_info.phone %></li>
+			</ul>
+
+		</section>
+	</div>
+</div>
+
+<div class="section__wrap--6">
+	<h2 class="main__subtitle--small header--double"><%= t('activity') %></h2>
+
+	<section class="section--col">
+		<%= render 'admin/action_logs/action_logs_container', action_logs: @contact_info.action_logs %>
+	</section>
+</div>
+
+<script>
+  var l = {
+    latitude: "<%= @contact_info.latitude %>",
+    longitude: "<%= @contact_info.longitude %>"
+  };
+
+var pins = [
+  {latitude: l.latitude, longitude: l.longitude, infoWindow: {
+      id: "uniq-id-of-this-infoWindow-"+Date.now(),
+      elements: ["<b> <%=@contact_info.name%> </b> "]
+    }
+  },
+  {latitude: 45.571114, longitude: 18.664185, marker: { icon: '../maps/omaps/img/pika_pin.png', size: {w: 30, h: 30} },
+    callback: (function() {alert("pika-pika")})  
+  },
+
+];
+
+// zoom is optional
+var center = {latitude: l.latitude, longitude: l.longitude, zoom: 10 };
+
+initOmap("js_osm"); //js_osm is id of div
+oMapAdd({
+  pins: pins, 
+  center: center, 
+}); // all props optional
+</script>

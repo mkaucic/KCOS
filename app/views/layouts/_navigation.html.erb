@@ -1,0 +1,30 @@
+<%= link_to root_path do %>
+  <%= image_tag 'logo.gif' %>
+<% end %>
+<%= render 'layouts/navigation_links' %>
+<% if @foremost_tag %>
+  <%= link_to @foremost_tag.name, tag_path(@foremost_tag.name) %>
+<% end %>
+<% SocialNetwork.all.each do |links| %>
+  <% if links.name == "Facebook" && !links.url.empty? %>
+    <%= link_to links.url, title: links.name do %>
+      <%= image_tag 'icons/facebook.svg' %>
+    <% end %>
+  <% end %>
+  <% if links.name == "Instagram" && !links.url.empty? %>
+    <%= link_to links.url, title: links.name do %>
+      <%= image_tag 'icons/instagram.svg' %>
+    <% end %>
+  <% end %>
+  <% if links.name == "Twitter" && !links.url.empty? %>
+    <%= link_to links.url, title: links.name do %>
+      <%= image_tag 'icons/twitter.svg' %>
+    <% end %>
+  <% end %>
+  <% if links.name == "YouTube" && !links.url.empty? %>
+    <%= link_to links.url, title: links.name do %>
+      <%= image_tag 'icons/youtube.svg' %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= render 'layouts/legal_links' %>

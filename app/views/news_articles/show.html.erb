@@ -1,0 +1,27 @@
+<% content_for :image, image_url(@news_article.image)%>
+<% content_for :description, seo_description((@news_article.brief.nil? ? @news_article.text : @news_article.brief)) %>
+<% content_for :title, "KC - " + @news_article.headline%>
+<%= link_to news_articles_path do %>
+  Povratak na Novosti
+<% end %>
+<%=@news_article.news_type %>
+<%=@news_article.headline %>
+<% if @news_article.news_article_images.blank? %>
+  <% unless @news_article.image.blank? %>
+    <%= image_tag @news_article.image %>
+  <% end %>
+<% else %>
+  <% @news_article.news_article_images.each do |image| %>
+    <%= image_tag image.image %>
+  <% end %>
+<% end %>
+<%=render_with_tags(@news_article.text) %>
+<% if @news_article.news_article_images.blank? %>
+  <% unless @news_article.image.blank? %>
+    <%= image_tag @news_article.image %>
+  <% end %>
+<% else %>
+  <% @news_article.news_article_images.each do |image| %>
+    <%= image_tag image.image %>
+  <% end %>
+<% end %>

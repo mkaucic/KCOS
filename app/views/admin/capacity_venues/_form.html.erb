@@ -1,0 +1,13 @@
+<%= form_for [:admin_venue, @capacity_venue] do |form| %>
+  <div class="field input__field--text">
+    <%= form.label :name, "Ime", class: "label" %>
+    <%= form.text_field :name, id: :capacity_venue_name, class: "input"%>
+  </div>
+  <div class="field input__field--text">
+    <%= form.label :capacity, "Kapacitet", class: "label" %>
+    <%= form.text_field :capacity, id: :capacity_venue_capacity, class: "input"%>
+  </div>
+  <div style ="display: inline" >
+     <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+  </div>
+<% end %>

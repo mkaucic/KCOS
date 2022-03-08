@@ -1,0 +1,43 @@
+<div class="datatable activity">
+		<div class="table__head--wrap">
+			<div class="table__head col col--1"><%= t('action_log.time') %></div>
+			<div class="table__head col col--1"><%= t('action_log.account') %></div>
+			<div class="table__head col col--1"><%= t('action_log.record') %></div>
+			<div class="table__head col col--3"><%= t('action_log.action') %></div>
+		</div>
+	<div class="js_action_logs">
+		<% if action_logs %>
+			<%= render 'admin/action_logs/action_logs', action_logs: action_logs %>
+		<% else %>
+			<em><%= t('action_log.no_recorded_activities') %></em>
+		<% end %>
+	</div>
+</div>
+
+<script>
+	$(function(){
+		var dates = []
+		$(".js_action_log").each(function(){
+			if(!dates.includes($(this).data("date"))){
+				dates.push($(this).data("date"));
+			}
+		})
+		for(i=0; i<dates.length; i++ ){
+			$(".js_action_log[data-date='"+dates[i]+"']").wrapAll("<div class='js_date_container' data-date='"+dates[i]+"'></div>");
+			$(".js_date_container[data-date='"+dates[i]+"']").prepend("<h3 class='js_date_title activity__date'>"+dates[i]+"</h3>").addClass("section action-log--padding");
+		}
+		renameDates();
+	})
+	function renameDates(){
+		$(".js_date_title").each(function(){
+			var today = "<%= Date.today.strftime('%d.%m.%Y') %>";
+			var yesterday = "<%= Date.yesterday.strftime('%d.%m.%Y') %>";
+			if($(this).text()==today){
+				$(this).text("<%= t('today') %>");
+			}
+			else if($(this).text()==yesterday){
+				$(this).text("<%= t('yesterday') %>");
+			}
+		})
+	}
+</script>

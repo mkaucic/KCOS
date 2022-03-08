@@ -1,0 +1,64 @@
+$(function() {
+  // empty old content and add form
+  $('.js_contact_content').empty()
+    .append('<%= j render partial: "admin/contact_infos/edit.html.erb" %>')
+
+  // pin depends on input fields and is not clickable
+  // location filed have onchange events  
+  var l = {
+    latitude: $(".js_latitude").val(),
+    longitude: $(".js_longitude").val()
+  };
+
+  var globalIcon = new OpenLayers.Icon(
+    defaultOmInactiveMarker.icon, 
+    defaultOmActiveMarker.size, 
+    new OpenLayers.Pixel(-(defaultOmActiveMarker.size.w/2), - defaultOmActiveMarker.size.h)
+  );
+
+  $( ".js_longitude" ).change(function() {
+    l.longitude = $( this ).val()
+
+    let lon = l.longitude;
+    let lat = l.latitude;
+    var position = new OpenLayers.LonLat(lon, lat).transform(
+      new OpenLayers.Projection("EPSG:4326"),
+      new OpenLayers.Projection("EPSG:900913"),
+    );
+
+    var marker = new OpenLayers.Marker(position, globalIcon)
+    globalMarkers.clearMarkers();
+    globalMarkers.addMarker(marker);
+  });
+
+  $( ".js_latitude" ).change(function() {
+    l.latitude = $( this ).val()
+
+    let lon = l.longitude;
+    let lat = l.latitude;
+    var position = new OpenLayers.LonLat(lon, lat).transform(
+      new OpenLayers.Projection("EPSG:4326"),
+      new OpenLayers.Projection("EPSG:900913"),
+    );
+
+    var marker = new OpenLayers.Marker(position, globalIcon)
+    globalMarkers.clearMarkers();
+    globalMarkers.addMarker(marker);
+  });
+
+  var pins = [
+    {latitude: l.latitude, longitude: l.longitude}
+  ];
+
+  // zoom is optional
+  var center = {latitude: l.latitude, longitude: l.longitude, zoom: 10 };
+
+  initOmap("js_osm"); //js_osm is id of div
+  oMapAdd({
+    pins: pins, 
+    center: center, 
+  }); // all props optional
+
+  runOnclick();
+});
+

@@ -1,0 +1,26 @@
+<%= form_for [:admin, @link] do |form| %>
+  <div class="field input__field--text">
+    <%= form.label :title, "Naziv poveznice", class: "label" %>
+    <%= form.text_field :title, id: :link_title, class: "input"%>
+  </div>
+  
+  <div class="field input__field--text">
+    <%= form.label :link, "Poveznica", class: "label" %>
+    <%= form.text_field :link, id: :link_link, class: "input"%>
+  </div>
+  
+  <div class="js_part js_basic_info">
+     <div class="field input__field--text">
+        <%= form.label :favicon, "Ikonica", class: "label" %>
+        <div class="image_field">
+           <p class="text--center"><%= "Upload ikonice" %></p>
+           <img src="<%= form.object.favicon_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+           <%= form.file_field :favicon, class: "image_file_field" %>
+        </div>
+     </div>
+  </div>
+
+  <div class="form__field">
+     <%= form.submit "Spremi", class: "btn btn--primary"%>
+  </div>
+<% end %>

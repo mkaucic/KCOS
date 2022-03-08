@@ -1,0 +1,12 @@
+<% unless @privacy_policy.blank? %>Pravila privatnosti<% end %>
+<% unless @impresum.blank? %>impresum<% end %>
+<% unless @gdpr.blank? %>GDPR<% end %>
+<% unless @privacy_policy.blank?%>
+  <%= sanitize @privacy_policy %>
+<% end %>
+<% unless @impresum.blank?%>
+  <%= sanitize @impresum %>
+<% end %>
+<% unless @gdpr.blank?%>
+  <%= sanitize @gdpr %>
+<% end %>

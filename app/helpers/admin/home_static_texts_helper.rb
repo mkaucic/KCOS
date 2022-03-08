@@ -1,0 +1,2 @@
+module Admin::HomeStaticTextsHelper
+end

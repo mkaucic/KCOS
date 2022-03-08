@@ -1,0 +1,86 @@
+<%= form_for [:admin, @news_article] do |form| %>
+    <%= form.label :headline, "Naslov novosti", class: "label"%>
+    <%= form.text_field :headline, id: :news_article_headline, class: "input"%>
+ 
+    <%= form.label :text, "Tekst novosti", class: "label" %>
+    <%= form.text_area :text, id: :news_article_text, :rows => 10, :cols => 5, :class => "tinymce"%>
+    <em><%= form.label "Ukoliko želite dodati tagove u objavu ispred željene riječi stavite znak # (#tag), izbjegavati dijakritičke znakove", class: "label" %></em>
+
+    <%= form.label :brief, "Kratki opis", class: "label" %>
+    <%= form.text_field :brief, id: :news_articles_brief, class: "input"%>
+    <%= form.label :news_type, "Vrsta novosti", class: "label" %>
+    <%= form.select :news_type, PostCategory.all.collect { |category| [ category.name ] } , {}, {class: "input"} %>
+
+    <% if @news_article.new_record? %>
+      <div class="form__field">
+        <%= form.label :publish_date, 'Datum objave', class: 'label' %>
+        <%= form.text_field :publish_date, value: Date.today.strftime("%d.%m.%Y"), class: "input js-datepicker" %>
+      </div>
+    <% else %>
+      <div class="form__field">
+        <%= form.label :publish_date, 'Datum objave', class: 'label' %>
+        <%= form.text_field :publish_date, value: @news_article.publish_date.strftime("%d.%m.%Y"), class: "input js-datepicker" %>
+      </div>
+    <% end %>
+
+    <!--
+    <%# if @toggle_date_new %>
+      <div class="form__field">
+        <%#= form.label :publish_date, 'Datum objave', class: 'label' %>
+        <%#= form.text_field :publish_date, value: Date.today.strftime("%d.%m.%Y"), class: "input js-datepicker" %>
+      </div>
+    <%# end %>
+    -->
+
+
+
+    <%# if @toggle_date_edit%>
+    <!--
+      <div class="form__field">
+        <%#= form.label :publish_date, 'Datum objave', class: 'label' %>
+        <%#= form.text_field :publish_date, value: @news_article.publish_date.strftime("%d.%m.%Y"), class: "input js-datepicker" %>
+      </div>
+    -->
+    <%# end %>
+
+
+    <div class="form__field">
+      <%= form.label :starred, "Top Novost" , class: "label"%>
+      <%= form.check_box :starred, id: :news_article_starred%>
+    </div>
+    <div class="js_part js_basic_info">
+       <div class="field input__field--text">
+          <%= form.label :image, "Naslovna slika novosti", class: "label" %>
+          <div class="image_field">
+             <p class="text--center"><%= t('image_upload') %></p>
+             <img src="<%= form.object.image_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+             <%= form.file_field :image, class: "image_file_field" %>
+          </div>
+       </div>
+    </div>
+
+    <%= form.label :slug, class: "label" %>
+    <%= form.text_field :slug, id: :news_article_slug, class: "input", reuqired: true %>
+    <%= form.submit "Spremi", class: "btn btn--primary btn--primary btm" %>
+    <% if defined?(@toggle_edit_button) %>
+      <%= link_to "Uredi galeriju", admin_news_article_news_article_images_path(@news_article.slug), class: "btn btn--primary btn" %>
+    <% end %>
+<% end %>
+
+<script type="text/javascript">
+    load_tiny ("<%= I18n.locale %>");
+
+    $("#news_article_headline, #news_article_slug").on("change", function(){
+    var title = $(this).val();
+    title = title.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s/g, "-");
+    $("#news_article_slug").val(title);
+  })
+  $("#news_article_slug").on("blur", function(){
+    if($(this).val() == ""){
+      var title = $("#news_article_headline").val();
+      title = title.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s/g, "-");
+      $(this).val(title);
+    }
+  })
+  init_datepicker();
+</script>

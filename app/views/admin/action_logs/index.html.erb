@@ -1,0 +1,11 @@
+<header class="header header--double">
+	<h1><%= t('admin_nav.activity') %></h1>
+</header>
+
+<section class="section--6">
+	<%= render 'admin/action_logs/action_logs_container', action_logs: @action_logs %>
+</section>
+
+<span id="js_show_more_link">
+	<%= link_to_next_page @action_logs, t('show_more'), params: {action: 'index', controller: 'action_logs'}, class: 'btn btn--tertiary', remote: true %>
+</span>

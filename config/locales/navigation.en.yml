@@ -1,0 +1,17 @@
+en:
+#ADMIN NAVIGATION#
+  admin_nav:
+    accounts: "Accounts"
+    email: "Contact email"
+    log_out: "Log out"
+    go_to_web: "Go to web pages"
+    account_options: "Manage your account"
+    contact_info: "Contact"
+    events: "Events"
+    news_articles: "News"
+    about_us: "About us"
+# PAGES NAVIGATION
+  pages_nav:
+    home: "Home"
+    contact: "Contact"
+    about: "About"

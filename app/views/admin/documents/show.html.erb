@@ -1,0 +1,51 @@
+<header class="header header--small">
+  <%= link_to admin_documents_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= "Dokumenti" %></h1>
+    <p><%= "Prikaz dokumenta"%></p>
+  </div>
+</header>
+
+
+<div class="section__wrap--6">
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit">
+      <%= link_to edit_admin_document_path(@document), class: "btn btn--edit" do %>
+        <%= inline_svg "icons/pen-group-3.svg" %>
+      <% end %>
+      <%= link_to [:admin, @document], method: :delete, data: { confirm: "Jesi li siguran" }, class: "btn btn--remove" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+    <div class="section__content">
+      <h1><%= @document.title %></h1>
+      <p>
+        <%= "Datum objave: #{@document.created_at}" %>
+      </p>
+      <% if @document.link.file.extension.downcase == "pdf" %>
+        <div class="resp-container">
+          <embed class="resp-iframe" src="<%= @document.link_url %>#toolbar=0&navpanes=0&scrollbar=0"></embed>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+<style>
+  .resp-container {
+    position: relative;
+    overflow: hidden;
+    height: 820px;
+  }
+  .resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>

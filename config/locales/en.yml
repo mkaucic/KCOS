@@ -1,0 +1,41 @@
+en:
+#ERRORS#
+  locale_missing: Language doesn't exist
+  text404: Ooh. This page doesn't exist
+  text500: Ooh. Internal server error going on
+  text422: Ooh. Can't process this request.
+  error_bottom_text: Don't worry. You can head back to
+  our_homepage: our homepage
+#COMMON PHRASES#
+  "yes": "Yes"
+  "no": "No"
+  english: "English"
+  croatian: "Croatian"
+  languages: "Languages"
+  actions: "Actions"
+  delete: "Delete"
+  create: "Create new"
+  edit: "Edit"
+  created_at: "Created at"
+  delete_confirm: "Are you sure?"
+  save: "Save"
+  send: "Send"
+  back: "Back"
+  edit: "Edit"
+  delete: "Delete"
+  name: "Name"
+  saved_successfully: "Saved successfully"
+  today: "Today"
+  yesterday: "yesterday"
+  mailing:
+    cms_credentials:
+      subject: "Administrative rights for Bamboo CMS"
+  mobile_dashboard_info: "You can access the CMS only on desktop devices"
+  contact:
+    address: "Address"
+    phone: "Phone"
+    email: "E-mail"
+    message: "Message"
+    mb: "MB"
+    oib: "OIB"
+    iban: "IBAN"

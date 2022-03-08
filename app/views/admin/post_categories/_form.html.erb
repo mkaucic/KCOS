@@ -1,0 +1,9 @@
+<%= form_for [:admin, @post_category] do |form| %>
+  <div class="form__field">
+      <%= form.label :name, "Naziv kategorije", class: "label" %>
+      <%= form.text_field :name, id: :@category_name, class: "input"%>
+    <div style ="display: inline" >
+      <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+    </div>
+  </div>
+<% end %>

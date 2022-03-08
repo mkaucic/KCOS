@@ -1,0 +1,11 @@
+<%= form_for [:admin, @social_network] do |form| %>
+  <div class="form__field">
+  	  <%= form.label :name, "Naziv", class: "label" %>
+      <%= form.text_field :name, id: :@social_network_name, class: "input"%>
+      <%= form.label :url, "Poveznica", class: "label" %>
+      <%= form.text_field :url, id: :@social_network_url, class: "input"%>
+    <div style ="display: inline" >
+      <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+    </div>
+  </div>
+<% end %>

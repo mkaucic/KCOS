@@ -1,0 +1,26 @@
+<h1>Tim</h1>
+<% unless @team == nil %>
+  <% @team.each_with_index do |member, index| %>
+    <%= member.role %>
+    <%= member.name %>
+    <% if member.team_images.blank? %>
+      <% unless member.image.blank? %>
+        <%= image_tag member.image %>
+      <% end %>
+    <% else %>
+      <% member.team_images.each do |team_image| %>
+        <%= image_tag team_image.image %>
+      <% end %>
+    <% end %>
+    <%= sanitize member.bio.html_safe %>
+    <% if member.team_images.blank? %>
+      <% unless member.image.blank? %>
+        <%= image_tag member.image %>
+      <% end %>
+    <% else %>
+      <% member.team_images.each do |team_image| %>
+        <%= image_tag team_image.image %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

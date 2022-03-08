@@ -1,0 +1,29 @@
+<header class="header header--small">
+  <%= link_to admin_news_articles_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= "Novosti" %></h1>
+    <p><%= "Prikaz novosti"%></p>
+  </div>
+</header>
+
+
+<div class="section__wrap--6">
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit">
+      <%= link_to edit_admin_news_article_path(@news_article.slug), class: "btn btn--edit" do %>
+        <%= inline_svg "icons/pen-group-3.svg" %>
+      <% end %>
+      <%= link_to admin_news_article_path(@news_article.slug), method: :delete, data: { confirm: "Jesi li siguran?" }, class: "btn btn--remove" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+    <div class="section__content">
+	    <p><%=@news_article.news_type %></p>
+		<strong><p><%=@news_article.headline %></p></strong>
+		<p><%=sanitize @news_article.text %></p>
+    </div>
+  </section>
+</div>

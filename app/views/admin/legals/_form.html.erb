@@ -1,0 +1,15 @@
+<%= form_for [:admin, @legal], url: admin_legal_path do |form| %>
+  <div class="form__field">
+      <%= form.label :gdpr, "GDPR", class: "label" %>
+      <%= form.text_area :gdpr, id: :gdpr, :rows => 10, :cols => 5, :class => "tinymce"%>
+      <%= form.label :impresum, "Impresum", class: "label" %>
+      <%= form.text_area :impresum, id: :impresum, :rows => 10, :cols => 5, :class => "tinymce"%>
+      <%= form.label :privacy_policy, "Pravila privatnosti", class: "label" %>
+      <%= form.text_area :privacy_policy, id: :privacy_policy, :rows => 10, :cols => 5, :class => "tinymce"%>
+      <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+  </div>
+<% end %>
+
+<script>
+  load_tiny ("<%= I18n.locale %>");
+</script>

@@ -1,0 +1,18 @@
+
+<em><%= contact_message.created_at.strftime("%d/%m/%Y %H:%M") %></em>
+<h3><%= mail_to contact_message.email %></h3>
+<h3><%= contact_message.full_name %></h3>
+<p class="message-content"><%= raw contact_message.message %></p>
+<% if current_admin.permitted?(:unlimited) %>
+	<% @contact_message.admins.each do |admin| %>
+		<%= image_tag admin.image_url, width: 25, title: "#{admin.full_name} - #{contact_message.read_time(admin).strftime('%d/%m/%Y (%H:%M)')}" unless admin.superadmin %>
+	<% end %>
+<% end %>
+
+<style>
+.message-content{
+	padding: 20px;
+	font-size: 20px;
+	border: silver 1px solid;
+}
+</style>

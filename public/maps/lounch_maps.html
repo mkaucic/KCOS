@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maps</title>
+    <!-- Include map libs -->
+    <script src="./omaps/OpenLayers.js"></script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFNtxECx2G3n4fn5UTUaXYm6Tl3lVYoRw&callback=initGmap"></script>
+
+    <!-- Include map inits and configs -->
+    <script src="./omaps/initOmap.js"></script>
+    <script src="./gmaps/initGmap.js"></script>
+  </head>
+  <body>
+
+    <h1>OpenStreetMap</h1>
+    <div id="js_osm" style="height:250px" > </div>
+
+    <h1>Google Maps</h1>
+    <div id="js_gm" style="height:250px"> </div>
+
+    <script>
+// MAP PROPS
+var pins = [
+  {latitude: 45.562566, longitude: 18.669857},
+  {latitude: 45.559933, longitude: 18.676751, 
+  marker: { icon: './omaps/img/pika_pin.png', size: {w: 30, h: 30} },
+  callback: (function() {alert("pika-pika")})  },
+  {latitude: 45.563635, longitude: 18.662450, infoWindow: {
+  id: "uniq-id-of-this-infoWindow-"+Date.now(),
+  elements: ["<h1> Hello </h1> "]
+}},
+];
+
+  // zoom is optional
+  var center = {latitude: 45.562566, longitude: 18.669857, zoom: 10 };
+
+  // all optional
+  var projections = {from: "EPSG:4326", to: "EPSG:900913" };
+
+  // INIT
+  // ----- OpenLayers ----- 
+  initOmap("js_osm"); //js_osm is id of div
+  // Add positions (try 10 times)
+  oMapAdd({
+  pins: pins, 
+  center: center, 
+  projections: projections
+}); // all props optional
+
+  // ----- Google Maps ----- 
+  // Init gmaps is in callbacks
+  // Add positions (try 10 times)
+  gMapAdd({
+  pins: pins, 
+  center: center, 
+}); // all props optional
+    </script>
+
+  </body>
+</html>

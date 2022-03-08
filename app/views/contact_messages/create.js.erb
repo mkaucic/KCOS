@@ -1,0 +1,12 @@
+<% if @contact_message.persisted? %>
+  $(".js_form_inputs").attr("disabled", "disabled");
+  $(".js_message_submit").html("<div class='btn btn--primary btn--medium js_message_submit'><%= t('contact_message.sent') %>!</div>");
+<% else %>
+  $(".form__alert--error").remove();
+  <% @contact_message.errors.messages.each do |message| %>
+    writeError("<%= message[0] %>", "<%= message[1].first %>");
+  <% end %>
+  function writeError(key, message){
+    $(".js_contact_message_"+key).closest("div").append("<span class='form__alert form__alert--error'>" + message + "</span>");
+  }
+<% end %>

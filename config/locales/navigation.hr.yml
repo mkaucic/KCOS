@@ -1,0 +1,18 @@
+hr:
+# ADMIN NAVIGATION
+  admin_nav:
+    activity: "Aktivnosti"
+    accounts: "Korisnici"
+    contact_messages: "Kontakt poruke"
+    log_out: "Odjavi se"
+    go_to_web: "Povratak na web stranice"
+    account_options: "Izmijeni svoj račun"
+    contact_info: "Kontakt"
+    events: "Događaji"
+    news_articles: "Novosti"
+    about_us: "O nama"
+  # PAGES NAVIGATION
+  pages_nav:
+    home: "Početna"
+    contact: "Kontakt"
+    about: "O Nama"

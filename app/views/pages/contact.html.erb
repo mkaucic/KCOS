@@ -1,0 +1,30 @@
+<h1>Kako do nas?</h1>
+<% if @contact.address %>
+  <%= t('contact.address') %>
+  <%= @contact.address %>
+<% end %>
+<% if @contact.phone %>
+  <%= t('contact.phone') %>
+  <%= link_to @contact.phone, 'tel:' + @contact.phone %>
+<% end %>
+<% if @contact.email %>
+  <%= t('contact.email') %>
+  <%= link_to @contact.email, 'mailto:' + @contact.email %>
+<% end %>
+<% if @contact.mb %>
+  <%= t('contact.mb') %>
+  <%= @contact.mb %>
+<% end %>
+<% if @contact.oib %>
+  <%= t('contact.oib') %>
+  <%=@contact.oib%>
+<% end %>
+<% if @contact.iban %>
+  <%= t('contact.iban') %>
+  <%=@contact.iban%>
+<% end %>
+<%= image_tag @contact.image %>
+<%= render 'contact_messages/form' %>
+<% unless @contact.image.blank? %>
+  <%= image_tag @contact.image %>
+<% end %>

@@ -1,0 +1,36 @@
+<%= form_for [:admin, @public_procurement] do |form| %>
+  <div class="field input__field--text">
+    <%= form.label :title, "Naziv dokumenta", class: "label" %>
+    <%= form.text_field :title, id: :public_procurement_title, class: "input"%>
+  </div>
+  <fieldset class="fieldset">
+    <legend class="label"><%= "Godina" %></legend>
+    <div class="form_field">
+      <%= form.select :year, (Date.today.year-2)..(Date.today.year+5), :selected => Time.current.year, class: "input"%>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="label"><%= "Dokument" %></legend>
+    <div class="form__field file__field">
+      <span><%= "Učitaj dokument" %></span>
+      <%= form.file_field :link %>
+    </div>
+    <span class="file-name">
+        <%= link_to form.object.link.file_name, form.object.link_url, class: "link", target: "_blank" if form.object.link.present? %>
+    </span>
+  </fieldset>
+
+  <div class="form__field">
+     <%= form.submit "Spremi", class: "btn btn--primary"%>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(".file__field input").change(function(event){
+      var file_name = ($(event.currentTarget)[0].links[0]["name"]);
+      var index = $(this).index(".file__field input");
+      $(".file-name").eq(index).text(file_name);
+    });
+</script>
+

@@ -1,0 +1,29 @@
+<header class="header header--small">
+  <%= link_to admin_about_us_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= "Tim" %></h1>
+    <p><%= "Prikaz člana tima"%></p>
+  </div>
+</header>
+
+<div class="section__wrap--6">
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit">
+      <%= link_to edit_admin_team_path(@team.id), class: "btn btn--edit" do %>
+        <%= inline_svg "icons/pen-group-3.svg" %>
+      <% end %>
+      <%= link_to admin_team_path(@team.id), method: :delete, data: { confirm: "Jesi li siguran?" }, class: "btn btn--remove" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+    <div class="section__content">
+      <div> <%= image_tag @team.image %> </div>
+      <h2> <%= @team.role %> </h2>
+      <h1> <%= @team.name %> </h1>
+      <p>  <%= sanitize @team.bio.html_safe %> </p>
+    </div>
+  </section>
+</div>

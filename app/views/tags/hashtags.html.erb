@@ -1,0 +1,19 @@
+#<%= @tag.name %>
+<% if @posts_events.length > 0 %>
+  <h2>Događaji</h2>
+  <% @posts_events.each do |post| %>
+    <% if post.respond_to?(:event_type) %>
+      <%= link_to post.headline, event_path(post.slug) %>
+      <%= post.brief %>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @posts_news.length > 0 %>
+  <h2>Novosti</h2>
+  <% @posts_news.each do |post| %>
+    <% if post.respond_to?(:news_type) %>
+      <%= link_to post.headline, news_article_path(post.slug) %>
+      <%= post.brief %>
+    <% end %>
+  <% end %>
+<% end %>

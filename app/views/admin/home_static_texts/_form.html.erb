@@ -1,0 +1,28 @@
+<%= form_for [:admin, @home_static_text], url: admin_home_static_texts_path do |form| %>
+  <div class="form__field">
+      <%= form.label :title, "Naslov", class: "label" %>
+      <%= form.text_field :title, id: :@home_static_text_title, class: "input"%>
+    <div class = "tiny-admin">
+      <%= form.label :static_text, "Tekst događaja", class: "label" %>
+      <%= form.text_area :static_text, id: :static_text, :rows => 10, :cols => 5, :class => "tinymce"%>
+    </div>
+    <div class="js_part js_basic_info">
+       <div class="field input__field--text">
+          <%= form.label :image, "Slika - O NAMA", class: "label" %>
+          <div class="image_field">
+             <p class="text--center"><%= t('image_upload') %></p>
+             <img src="<%= form.object.image_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+             <%= form.file_field :image, class: "image_file_field" %>
+          </div>
+       </div>
+    </div>
+    <div style ="display: inline" >
+      <%= form.submit "Spremi", class: "btn btn--primary btn--small"%>
+      <%= link_to 'Odustani', admin_about_us_path, class: "btn btn--primary btn--small" %>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  load_tiny ("<%= I18n.locale %>");
+</script>

@@ -1,0 +1,62 @@
+<header class="header header--double">
+  <h1><%= "Sve novosti" %></h1>
+  <%= link_to 'Dodaj novost', new_admin_news_article_path, class: "btn btn--primary btn--large" %>
+</header>
+
+<section class="section section--12 section--double">
+  <table class="datatable">
+    <thead>
+      <tr class="table__head--wrap">
+        <th class="table__head col col--1"><%= "Datum objave" %></th>
+        <th class="table__head col col--1"><%= "Naslov" %></th>
+        <th class="table__head col col--2"><%= "Opis" %></th>
+        <th class="table__head col col--1"><%= "Vrsta novosti" %></th>
+        <th class="table__head col col--1"><%= "Istaknuto" %></th>
+        <th class="table__head col col--1"><%= "Radnje" %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @news_articles.each do |news_article| %>
+        <tr id=<%= dom_id(news_article) %> class="table__item--wrap">
+            <td class="table__item col col--1" data-sort="<%= news_article.publish_date %>"><%= news_article.publish_date.to_formatted_s(:custom) %></td>
+          <td class="table__item col col--1"><%= news_article.headline %></td>
+          <td class="table__item col col--2"><%= news_article.brief %></td>
+
+          <td class="table__item col col--1"><%= news_article.news_type %></td>
+
+          <td class="cbx table__item table__icon--wrap col col--1">
+            <%= link_to admin_news_article_toggle_starred_path(id: news_article.slug), method: :put, class: "table__icon #{'active' if news_article.starred}" do %>
+              <%= inline_svg "icons/star.svg", title: news_article.starred ? "Ukloni iz istaknutih" : "Istakni" %>
+            <% end %>
+          </td>
+
+          <td class="table__item table__icon--wrap col col--1">
+            <%= link_to admin_news_article_news_article_images_path(news_article.slug), class: "table__icon" do %>
+              <%= image_tag "icons/gallery.png" %>
+            <% end %>
+            
+            <%= link_to admin_news_article_path(news_article.slug), class: "table__icon" do %>
+              <%= inline_svg "icons/eye-ban-18.svg" %>
+            <% end %>
+
+            <%= link_to edit_admin_news_article_path(news_article.slug), class: "table__icon" do %>
+              <%= inline_svg "icons/pen-group-3.svg" %>
+            <% end %>
+
+            <%= link_to admin_news_article_path(news_article.slug), method: :delete, data: { confirm: 'Jesi li siguran?' }, class: "table__icon"  do %>
+                <%= inline_svg "icons/trash-simple.svg" %>
+            <% end %>
+
+            
+
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<script>
+  init_datatable({lang: "<%= I18n.locale %>"});
+</script>

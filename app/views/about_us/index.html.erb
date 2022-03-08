@@ -1,0 +1,18 @@
+<% unless @about_us_body.nil? %>
+  O centru
+<% end %>
+<% unless @team.nil? %>
+  Tim
+<% end %>
+<% unless @venues.nil? %>
+  Prostori
+<% end %>
+<% unless @about_us_body.nil? %>
+  <%= render 'about_us/about' %>
+<% end %>
+<% unless @team.nil? %>
+  <%= render 'about_us/team' %>
+<% end %>
+<% unless @venues.nil? %>
+  <%= render 'about_us/venues' %>
+<% end %>

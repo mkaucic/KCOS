@@ -1,0 +1,11 @@
+<% @d_year.each do |year|  %>
+  <%= year %>
+<% end %>
+<% @d_year.each do |year|  %>
+  <%@documents.each do |file|  %>
+    <% if file.year == year.to_i %>
+      <%= file.title %>
+      <%=link_to "Preuzmi", file.link_url, target: "_blank" %>
+    <% end %>
+  <% end %>
+<% end %>

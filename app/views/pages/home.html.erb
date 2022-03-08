@@ -1,0 +1,8 @@
+<%= image_tag @home_text.image %>
+<%= sanitize @home_text.title %>
+<%= sanitize @home_text.static_text %>
+<% if @foremost_event and !@foremost_event.start_date.blank? and !@foremost_event.headline.blank? and !@foremost_event.slug.blank? %>
+  <%= t('homepage.next_event') %>
+  <%= @foremost_event.start_date.to_s(:custom) %>
+  <%= link_to @foremost_event.headline, event_path(@foremost_event.slug) %>
+<% end %>

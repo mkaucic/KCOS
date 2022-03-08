@@ -1,0 +1,2 @@
+[droplets]
+production4.bambooapp.eu:12321 ansible_ssh_user=deployer

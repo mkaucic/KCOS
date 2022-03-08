@@ -1,0 +1,11 @@
+<% @pp_year.each do |year|  %>
+  <%= year %>
+<% end %>
+<% @pp_year.each do |year|  %>
+  <%@public_procurements.each do |file|  %>
+    <% if file.year == year.to_i %>
+      <%= file.title %>
+      <%=link_to "Preuzmi", file.link_url, target: "_blank" %>
+    <% end %>
+  <% end %>
+<% end %>

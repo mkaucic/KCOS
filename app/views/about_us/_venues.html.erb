@@ -1,0 +1,29 @@
+<h1>Prostori</h1>
+<% @venues.each_with_index do |venue, index| %>
+  <% if venue.venue_images.blank? %>
+    <% unless venue.image.blank? %>
+      <%= image_tag venue.image %>
+    <% end %>
+  <% else %>
+    <% venue.venue_images.each do |venue_image| %>
+      <%= image_tag venue_image.image %>
+    <% end %>
+  <% end %>
+  <%= venue.name %>
+  <% unless venue.capacity_venues.blank? %>
+    <h2>Kapacitet</h2>
+    <% venue.capacity_venues.each do |capacity| %>
+      <%= capacity.name %>
+      <%= capacity.capacity %>
+    <% end %>
+  <% end %>
+  <% if venue.venue_images.blank? %>
+    <% unless venue.image.blank? %>
+      <%= image_tag venue.image %>
+    <% end %>
+  <% else %>
+    <% venue.venue_images.each do |venue_image| %>
+      <%= image_tag venue_image.image %>
+    <% end %>
+  <% end %>
+<% end %>

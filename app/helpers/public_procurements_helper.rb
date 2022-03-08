@@ -1,0 +1,2 @@
+module PublicProcurementsHelper
+end

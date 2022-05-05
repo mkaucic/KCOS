@@ -340,15 +340,15 @@
   flex-direction: column;
 }
 
-// .sidebar--wrapper  {
-//   display: flex;
-// }
+.sidebar--wrapper  {
+  display: flex;
+}
 
-// .body--wrapper  {
-//   display: flex;
-//   flex-direction: column;
-// }
+.body--wrapper  {
+  display: flex;
+  justify-content: space-between;
+}
 
 .notification--area  {
-  display: flex;
+  background-color: black;
 }

@@ -317,3 +317,38 @@
     padding: 0.5rem;
   }
 }
+
+
+/*------------------------------------*\
+# JA
+\*------------------------------------*/
+
+.navigation--header  {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.navigation--header__socials  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation__links  {
+  display: flex;
+  flex-direction: column;
+}
+
+// .sidebar--wrapper  {
+//   display: flex;
+// }
+
+// .body--wrapper  {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.notification--area  {
+  display: flex;
+}

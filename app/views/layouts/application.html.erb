@@ -25,15 +25,27 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzd4fBjS8aS9V3-_tbiyPq9l2
     <%= favicon_link_tag 'favicon.png' %>
   </head>
   <body>
-    <%= render 'layouts/navigation' unless @navigation_disabled %>
-    <%= render 'layouts/header' unless @header_disabled %>
-    <main role="main" class="main">
-      <%= render 'layouts/notifications' %>
-      <%= yield %>
-    </main>
-    <%= render 'layouts/footer' unless @footer_disabled %>
-    <%#= raw bamboolab_cookies(button: "OK", text: "#{Rails.application.class.parent_name} koristi kolačiće za pružanje boljeg korisničkog iskustva i funkcionalnosti stranice.", more_link: "http://www.aboutcookies.org/", more_text: "Saznaj više") %>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <div class="body--wrapper">
+      <div class="sidebar--wrapper">
+        <section class="sidebar">
+          <div class ="sidebar__content">
+
+            <%= render 'layouts/navigation' unless @navigation_disabled %>
+            <%= render 'layouts/header' unless @header_disabled %>
+
+          </div>
+        </section>
+      </div>
+      <div class="notification--area">  
+        <main role="main" class="main">
+          <%= render 'layouts/notifications' %>
+          <%= yield %>
+        </main>
+        <%= render 'layouts/footer' unless @footer_disabled %>
+        <%#= raw bamboolab_cookies(button: "OK", text: "#{Rails.application.class.parent_name} koristi kolačiće za pružanje boljeg korisničkog iskustva i funkcionalnosti stranice.", more_link: "http://www.aboutcookies.org/", more_text: "Saznaj više") %>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+      </div>
+    </div>
   </body>
 </html>

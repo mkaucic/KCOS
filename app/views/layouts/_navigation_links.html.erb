@@ -1,9 +1,11 @@
 <div class="navigation__links">
-<%= active_link_to 'Događanja', events_path %>
-<%= active_link_to 'Novosti / Blog', news_articles_path %>
-<%= active_link_to 'O centru', about_us_path %>
-<%= active_link_to 'Dokumenti', documents_path %>
-<%= active_link_to 'Javna nabava', public_procurements_path %>
-<%= active_link_to 'Poveznice', links_path %>
-<%= active_link_to 'Kontakt', kontakt_path %>
+    <div class="navigation__links--big">
+        <%= active_link_to 'Događanja', events_path %>
+        <%= active_link_to 'Novosti / Blog', news_articles_path %>
+        <%= active_link_to 'O centru', about_us_path %>
+    </div>
+    <div class="navigation__links--small">
+        <%= active_link_to 'Javna nabava', public_procurements_path %>
+        <%= active_link_to 'Kontakt', kontakt_path %>
+    </div>
 </div>

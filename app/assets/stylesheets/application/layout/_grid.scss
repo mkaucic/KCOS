@@ -332,7 +332,8 @@
 .navigation--header__socials  {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
 }
 
 .navigation__links  {
@@ -349,6 +350,32 @@
   justify-content: space-between;
 }
 
-.notification--area  {
+.main  {
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation__links--big, .navigation__links--small  {
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-links  {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation--header__legals  {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation--header__event  {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 162px;
+  gap: 10px;
 }

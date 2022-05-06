@@ -1,13 +1,20 @@
 <nav class="nav--desktop">
-  <div class="layout--main flex flex--between navigation--header">
+  <div class="layout--main flex--between navigation--header">
     <%= link_to root_path, class:"nav--desktop__logo" do %>
-      <%= image_tag 'logo.gif' %>
+      <%= image_tag 'logo.svg' %>
     <% end %>
     <div class="navigation--header__links">
       <%= render 'layouts/navigation_links' %>
-      <% if @foremost_tag %>
-        <%= link_to @foremost_tag.name, tag_path(@foremost_tag.name) %>
-      <% end %>
+    </div>
+    <div class="navigation--header__event">
+      <div class="navigation--rectangle">
+        <%= image_tag 'rectangle.svg' %>
+      </div>
+      <div class="navigation--event">
+        <% if @foremost_event and !@foremost_event.start_date.blank? and !@foremost_event.headline.blank? and !@foremost_event.slug.blank? %>
+          <%= link_to @foremost_event.headline, event_path(@foremost_event.slug) %>
+        <% end %>
+      </div>
     </div>
     <div class="navigation--header__socials">
       <% SocialNetwork.all.each do |links| %>
@@ -26,14 +33,16 @@
             <%= image_tag 'icons/twitter.svg' %>
           <% end %>
         <% end %>
-        <% if links.name == "YouTube" && !links.url.empty? %>
+        <% if links.name == "Youtube" && !links.url.empty? %>
           <%= link_to links.url, title: links.name do %>
             <%= image_tag 'icons/youtube.svg' %>
           <% end %>
         <% end %>
       <% end %>
     </div>
-    <%= render 'layouts/legal_links' %>
+    <div class="navigation--header__legals">
+        <%= render 'layouts/legal_links' %>
+    </div>
   </div>
 </nav>
 <nav class="nav--mobile">

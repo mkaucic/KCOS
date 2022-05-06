@@ -152,21 +152,33 @@
 # JA
 \*------------------------------------*/
 
-.navigation--header  {
-  background-color: $white--true;
-  padding: 56px 108px 56px 108px;
-}
 
 .navigation--header a  {
   text-decoration: none;
   font-family: $new-font-family;
-  font-size: 28px;
+  color: $base-font-color;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.71;
+}
+
+.navigation__links--big a  {
+  font-size: 28px;
+  line-height: 40px;
   letter-spacing: -1.56px;
-  color: $base-font-color;
+}
+
+.navigation__links--small a  {
+  font-size: 18px;
+  line-height: 40px;
+  letter-spacing: -1.56px;
+}
+
+.legal-links  {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: normal;
+  color: var(--black);
 }
 
 .nav--desktop  {
@@ -192,4 +204,18 @@
 .body--wrapper  {
   background-color: black;
   color: white;
+}
+
+.navigation--header__legals  {
+  margin-top: 56px;
+}
+
+.navigation--event a  {
+  font-family: $new-font-family;
+  font-size: 28px;
+  font-weight: $font-weight--semibold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: -1px;
 }

@@ -1,4 +1,83 @@
 .notification--area  {
+    position: relative;
+    max-width: 1380px;
+}
+
+.notification--area img  {
     width: 100%;
     object-fit: cover;
+    position: absolute;
+}
+
+.notification--event__title, .notification--event__text  {
+    z-index: 1;
+}
+
+.notification--event__image  {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.notification--event__wrapper  {
+    font-family: $new-font-family;
+    color: $white--true;
+    position: relative;
+    top: 220px;
+    padding-left: 289px;
+    padding-right: 251px;
+}
+
+.notification--event__title  {
+    font-size: 128px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 128px;
+    letter-spacing: -8px;
+    color: var(--white);
+}
+
+.notification--event__text  {
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    color: var(--white);
+    margin-top: 35px;
+}
+
+.notification--event  {
+    position: relative;
+}
+
+.upcoming-events__title  {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold; 
+    font-stretch: normal;  
+    font-style: normal;
+    line-height: 32px; 
+    letter-spacing: 1.43px;  
+    color: var(--white);
+}
+
+.upcoming-events__flex  {
+    font-size: 16px;
+    font-weight: normal; 
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--white);
+}
+
+.notification--event__link a  {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--white);
 }

@@ -42,7 +42,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzd4fBjS8aS9V3-_tbiyPq9l2
           <%= yield %>
         </main>
         <%= render 'layouts/footer' unless @footer_disabled %>
-        <%#= raw bamboolab_cookies(button: "OK", text: "#{Rails.application.class.parent_name} koristi kolačiće za pružanje boljeg korisničkog iskustva i funkcionalnosti stranice.", more_link: "http://www.aboutcookies.org/", more_text: "Saznaj više") %>
+        <%= raw bamboolab_cookies(button: "OK", text: "#{Rails.application.class.parent_name} koristi kolačiće za pružanje boljeg korisničkog iskustva i funkcionalnosti stranice.", more_link: "http://www.aboutcookies.org/", more_text: "Saznaj više") %>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
       </div>

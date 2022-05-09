@@ -1,8 +1,34 @@
-<%= image_tag @home_text.image %>
-<%= sanitize @home_text.title %>
-<%= sanitize @home_text.static_text %>
-<% if @foremost_event and !@foremost_event.start_date.blank? and !@foremost_event.headline.blank? and !@foremost_event.slug.blank? %>
-  <%= t('homepage.next_event') %>
-  <%= @foremost_event.start_date.to_s(:custom) %>
-  <%= link_to @foremost_event.headline, event_path(@foremost_event.slug) %>
-<% end %>
+<div class="notification--event">
+  <div class="notification--event__image">
+    <%= image_tag @home_text.image %>
+  </div>
+  <div class="notification--event__wrapper">
+    <div class="notification--event__top">
+      <div class="notification--event__title">
+        <%= sanitize @home_text.title %>
+      </div>
+      <div class="notification--event__text">
+        <%= sanitize @home_text.static_text %>
+      </div>
+    </div>
+    <div class="notification--event__bottom">
+      <% if @foremost_event and !@foremost_event.start_date.blank? and !@foremost_event.headline.blank? and !@foremost_event.slug.blank? %>
+        <div class="upcoming-events">
+          <div class="upcoming-events__title">
+            <%= t('homepage.next_event') %>
+          </div>
+          <div class="upcoming-events__flex">
+            <div  class="upcoming-events__date">
+              <%= @foremost_event.start_date.to_s(:custom) %>
+            </div>
+            <div class="upcoming-events__time">
+              <%= @foremost_event.starting_at.to_s(:time) %>
+            </div>
+            <div class="notification--event__link">
+              <%= link_to @foremost_event.headline, event_path(@foremost_event.slug) %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -350,12 +350,10 @@
   justify-content: space-between;
 }
 
-.main  {
-  background-color: black;
+.notifcation--area  {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .navigation__links--big, .navigation__links--small  {
@@ -378,4 +376,22 @@
   flex-direction: row;
   margin-bottom: 162px;
   gap: 10px;
+}
+
+.notification--event__top  {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification--event__bottom  {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
+
+.upcoming-events__flex  {
+  display: flex;
+  flex-direction: row;
+  gap: 39px;
+  align-items: center;
 }

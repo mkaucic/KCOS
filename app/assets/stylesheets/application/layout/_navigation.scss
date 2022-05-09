@@ -182,7 +182,6 @@
 }
 
 .nav--desktop  {
-  padding: 0;
   width: auto;
   height: auto;
 }
@@ -202,8 +201,7 @@
 }
 
 .body--wrapper  {
-  background-color: black;
-  color: white;
+  color: $white--true;
 }
 
 .navigation--header__legals  {

@@ -1,30 +1,40 @@
-<h1>Kako do nas?</h1>
-<% if @contact.address %>
-  <%= t('contact.address') %>
-  <%= @contact.address %>
-<% end %>
-<% if @contact.phone %>
-  <%= t('contact.phone') %>
-  <%= link_to @contact.phone, 'tel:' + @contact.phone %>
-<% end %>
-<% if @contact.email %>
-  <%= t('contact.email') %>
-  <%= link_to @contact.email, 'mailto:' + @contact.email %>
-<% end %>
-<% if @contact.mb %>
-  <%= t('contact.mb') %>
-  <%= @contact.mb %>
-<% end %>
-<% if @contact.oib %>
-  <%= t('contact.oib') %>
-  <%=@contact.oib%>
-<% end %>
-<% if @contact.iban %>
-  <%= t('contact.iban') %>
-  <%=@contact.iban%>
-<% end %>
-<%= image_tag @contact.image %>
-<%= render 'contact_messages/form' %>
-<% unless @contact.image.blank? %>
-  <%= image_tag @contact.image %>
-<% end %>
+<div class="contact">
+  <h1>Kako do nas?</h1>
+  <div class="contact--wrapper">
+    <div class="contact--information">
+      <div class="contact--information__address">
+        <% if @contact.address %>
+          <div class="address--title">
+            <%= t('contact.address') %>
+          </div>
+          <div class="address--text">
+            <%= @contact.address %>
+          </div>
+        <% end %>
+      </div>
+      <div class="contact--information__phone">
+        <% if @contact.phone %>
+          <div class="phone--title">
+            <%= t('contact.phone') %>
+          </div>
+          <div class="phone--text">
+            <%= link_to @contact.phone, 'tel:' + @contact.phone %>
+          </div>
+        <% end %>
+      </div>
+      <div class="contact--information__email">
+        <% if @contact.email %>
+          <div class="email--title">
+            <%= t('contact.email') %>
+          </div>
+          <div class="email--text">
+            <%= link_to @contact.email, 'mailto:' + @contact.email %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="contact--message">
+      <%= render 'contact_messages/form' %>
+    </div>
+  </div>
+</div>

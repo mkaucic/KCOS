@@ -1,0 +1,72 @@
+.contact  {
+    color: black;
+    font-family: $new-font-family;
+    padding-top: 176px;
+    padding-right: 252px;
+}
+
+.contact h1  {
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal; 
+    font-style: normal;
+    line-height: 64px;
+    letter-spacing: normal;
+}
+
+.address--title, .phone--title, .email--title, .message--title  {
+    text-transform: uppercase;
+    color: rgba(35, 31, 32, 0.6);
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: -1px;
+} 
+
+.address--text, .phone--text, .email--text  {
+    color: #231f20;
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+}
+
+.contact a  {
+    text-decoration: none;
+    color: #231f20;
+}
+
+.message--name::placeholder, .message--email::placeholder, .message--text::placeholder, .message--submit  {
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal; 
+    line-height: 32px; 
+    letter-spacing: normal;  
+    color: #353535;
+}
+
+.message--name, .message--email, .message--text  {
+    border: solid 1px black;
+    border-radius: 0;
+    width: 408px;
+}
+
+.message--submit  {
+    background-color: black;
+    color: $white--true;
+    font-weight: bold;
+    height: 48px;
+    width: 120px;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+.message--title  {
+    margin-bottom: 21px;
+}

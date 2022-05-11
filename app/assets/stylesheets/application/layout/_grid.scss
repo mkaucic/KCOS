@@ -415,3 +415,17 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.about--navigation  {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 64px;
+  padding-bottom: 64px;
+}
+
+.about--body img  {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}

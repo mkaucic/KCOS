@@ -1,0 +1,46 @@
+.about--wrapper  {
+    font-family: $new-font-family;
+    color: $white--true;
+}
+
+.about--navigation  {
+    z-index: 1;
+    padding-top: 80px;
+    padding-left: 288px;
+    text-transform: uppercase;
+}
+
+.about--body  {
+}
+
+.about--body__team, .about--body__venues  {
+    display: none;
+}
+
+.center--title  {
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 64px;
+    letter-spacing: normal;
+    margin-bottom: 36px;
+}
+
+.center--title, .center--text  {
+    padding-left: 288px;
+    padding-right: 541px;
+}
+
+.center--text p  {
+    margin: 0;
+}
+
+.center--text  {
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+}

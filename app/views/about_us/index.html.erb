@@ -1,18 +1,38 @@
-<% unless @about_us_body.nil? %>
-  O centru
-<% end %>
-<% unless @team.nil? %>
-  Tim
-<% end %>
-<% unless @venues.nil? %>
-  Prostori
-<% end %>
-<% unless @about_us_body.nil? %>
-  <%= render 'about_us/about' %>
-<% end %>
-<% unless @team.nil? %>
-  <%= render 'about_us/team' %>
-<% end %>
-<% unless @venues.nil? %>
-  <%= render 'about_us/venues' %>
-<% end %>
+<div class="about">
+    <div class="about--wrapper">
+    <div class="about--navigation">
+      <div class="about--navigation__center">
+        <% unless @about_us_body.nil? %>
+          O centru
+        <% end %>
+      </div>
+      <div class="about--navigation__team">
+        <% unless @team.nil? %>
+          Tim
+        <% end %>
+      </div>
+      <div class="about--navigation__venues">
+        <% unless @venues.nil? %>
+          Prostori
+        <% end %>
+      </div>
+    </div>
+    <div class="about--body">
+      <div class="about--body__center">
+        <% unless @about_us_body.nil? %>
+          <%= render 'about_us/about' %>
+        <% end %>
+      </div>
+      <div class="about--body__team">
+        <% unless @team.nil? %>
+          <%= render 'about_us/team' %>
+        <% end %>
+      </div>
+      <div class="about--body__venues">
+        <% unless @venues.nil? %>
+          <%= render 'about_us/venues' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

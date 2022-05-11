@@ -50,7 +50,7 @@
 <section class="section section--12" style="margin-top: -3vh;"> <!-- TODO: boze sakloni !-->
   <p><h3><%= @about_us_info.first.title %></h3></p>
   <p><%= sanitize @about_us_info.first.static_body %></p>
-  <%= image_tag !@about_us.image.file.exists? ? 'photos/4_thumb.png' : @about_us.image_url(:thumb), height: 100%>
+  <%= image_tag !@about_us.image.file.try(:exists?) ? 'photos/4_thumb.png' : @about_us.image_url(:thumb), height: 100%>
 </section>
 
 <header class="header header--double">
@@ -60,7 +60,7 @@
 <section class="section section--12" style="margin-top: -3vh;"> <!-- TODO: boze sakloni !-->
   <p><h3><%= @home_static_text.title %></h3></p>
   <p><%= sanitize @home_static_text.static_text %></p>
-  <%= image_tag @home_static_text.image.file.exists? ? 'photos/1.png' : @about_us.image_url(:thumb), height: 100%>
+  <%= image_tag @home_static_text.image.file.try(:exists?) ? 'photos/1.png' : @about_us.image_url(:thumb), height: 100%>
 </section>
 
 <script>

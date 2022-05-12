@@ -14,7 +14,7 @@
     letter-spacing: normal;
 }
 
-.address--title, .phone--title, .email--title, .message--title  {
+.address__title, .phone__title, .email__title, .message__title  {
     text-transform: uppercase;
     color: rgba(35, 31, 32, 0.6);
     font-size: 16px;
@@ -25,7 +25,7 @@
     letter-spacing: -1px;
 } 
 
-.address--text, .phone--text, .email--text  {
+.address__text, .phone__text, .email__text  {
     color: #231f20;
     font-size: 21px;
     font-weight: normal;
@@ -40,7 +40,7 @@
     color: #231f20;
 }
 
-.message--name::placeholder, .message--email::placeholder, .message--text::placeholder, .message--submit  {
+.message__name::placeholder, .message__email::placeholder, .message__text::placeholder, .message__submit  {
     font-family: $new-font-family;
     font-size: 14px;
     font-weight: normal;
@@ -51,13 +51,13 @@
     color: #353535;
 }
 
-.message--name, .message--email, .message--text  {
+.message__name, .message__email, .message__text  {
     border: solid 1px black;
     border-radius: 0;
     width: 408px;
 }
 
-.message--submit  {
+.message__submit  {
     background-color: black;
     color: $white--true;
     font-weight: bold;
@@ -67,6 +67,6 @@
     border-radius: 0;
 }
 
-.message--title  {
+.message__title  {
     margin-bottom: 21px;
 }

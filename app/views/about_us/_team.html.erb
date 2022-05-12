@@ -1,8 +1,14 @@
 <h1>Tim</h1>
-<% unless @team == nil %>
+<div class="team__wrapper">
+<div class="team__name">
   <% @team.each_with_index do |member, index| %>
-    <%= member.role %>
-    <%= member.name %>
+    <button><%= member.name %></button>
+  <% end %> 
+</div>
+
+<div class="team__content">
+<% @team.each_with_index do |member, index| %>
+    <div class ="team__image">
     <% if member.team_images.blank? %>
       <% unless member.image.blank? %>
         <%= image_tag member.image %>
@@ -12,15 +18,13 @@
         <%= image_tag team_image.image %>
       <% end %>
     <% end %>
-    <%= sanitize member.bio.html_safe %>
-    <% if member.team_images.blank? %>
-      <% unless member.image.blank? %>
-        <%= image_tag member.image %>
-      <% end %>
-    <% else %>
-      <% member.team_images.each do |team_image| %>
-        <%= image_tag team_image.image %>
-      <% end %>
+    </div>
+    <div class="team__role">
+      <%= member.role %>
+    </div>
+    <div class="team__bio">
+      <%= sanitize member.bio.html_safe %>
+    </div>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+</div>

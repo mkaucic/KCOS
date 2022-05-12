@@ -1,17 +1,17 @@
-<div class="notification--event">
-  <div class="notification--event__image">
+<div class="notification__event">
+  <div class="notification__event--image">
     <%= image_tag @home_text.image %>
   </div>
-  <div class="notification--event__wrapper">
-    <div class="notification--event__top">
-      <div class="notification--event__title">
+  <div class="notification__event--wrapper">
+    <div class="notification__event--top">
+      <div class="notification__event--title">
         <%= sanitize @home_text.title %>
       </div>
-      <div class="notification--event__text">
+      <div class="notification__event--text">
         <%= sanitize @home_text.static_text %>
       </div>
     </div>
-    <div class="notification--event__bottom">
+    <div class="notification__event--bottom">
       <% if @foremost_event and !@foremost_event.start_date.blank? and !@foremost_event.headline.blank? and !@foremost_event.slug.blank? %>
         <div class="upcoming-events">
           <div class="upcoming-events__title">
@@ -24,7 +24,7 @@
             <div class="upcoming-events__time">
               <%= @foremost_event.starting_at.to_s(:time) %>
             </div>
-            <div class="notification--event__link">
+            <div class="notification__event--link">
               <%= link_to @foremost_event.headline, event_path(@foremost_event.slug) %>
             </div>
           </div>

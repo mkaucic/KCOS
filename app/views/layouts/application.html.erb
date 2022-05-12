@@ -25,8 +25,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzd4fBjS8aS9V3-_tbiyPq9l2
     <%= favicon_link_tag 'favicon.png' %>
   </head>
   <body>
-    <div class="body--wrapper">
-      <div class="sidebar--wrapper">
+    <div class="body__wrapper">
+      <div class="sidebar__wrapper">
         <section class="sidebar">
           <div class ="sidebar__content">
 
@@ -36,7 +36,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzd4fBjS8aS9V3-_tbiyPq9l2
           </div>
         </section>
       </div>
-      <div class="notification--area">  
+      <div class="notification__area">  
         <main role="main" class="main">
           <%= render 'layouts/notifications' %>
           <%= yield %>

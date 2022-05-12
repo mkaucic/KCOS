@@ -1,39 +1,39 @@
 <div class="contact">
   <h1>Kako do nas?</h1>
-  <div class="contact--wrapper">
-    <div class="contact--information">
-      <div class="contact--information__address">
+  <div class="contact__wrapper">
+    <div class="contact__information">
+      <div class="contact__information--address">
         <% if @contact.address %>
-          <div class="address--title">
+          <div class="address__title">
             <%= t('contact.address') %>
           </div>
-          <div class="address--text">
+          <div class="address__text">
             <%= @contact.address %>
           </div>
         <% end %>
       </div>
-      <div class="contact--information__phone">
+      <div class="contact__information--phone">
         <% if @contact.phone %>
-          <div class="phone--title">
+          <div class="phone__title">
             <%= t('contact.phone') %>
           </div>
-          <div class="phone--text">
+          <div class="phone__text">
             <%= link_to @contact.phone, 'tel:' + @contact.phone %>
           </div>
         <% end %>
       </div>
-      <div class="contact--information__email">
+      <div class="contact__information--email">
         <% if @contact.email %>
-          <div class="email--title">
+          <div class="email__title">
             <%= t('contact.email') %>
           </div>
-          <div class="email--text">
+          <div class="email__text">
             <%= link_to @contact.email, 'mailto:' + @contact.email %>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="contact--message">
+    <div class="contact__message">
       <%= render 'contact_messages/form' %>
     </div>
   </div>

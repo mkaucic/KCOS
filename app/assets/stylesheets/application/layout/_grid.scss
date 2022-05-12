@@ -323,13 +323,13 @@
 # JA
 \*------------------------------------*/
 
-.navigation--header  {
+.navigation__header  {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
 }
 
-.navigation--header__socials  {
+.navigation__header--socials  {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -341,17 +341,17 @@
   flex-direction: column;
 }
 
-.sidebar--wrapper  {
+.sidebar__wrapper  {
   display: flex;
   flex-direction: row;
 }
 
-.body--wrapper  {
+.body__wrapper  {
   display: flex;
   justify-content: space-between;
 }
 
-.notifcation--area  {
+.notifcation__area  {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -368,24 +368,24 @@
   flex-direction: column;
 }
 
-.navigation--header__legals  {
+.navigation__header--legals  {
   display: flex;
   flex-direction: column;
 }
 
-.navigation--header__event  {
+.navigation__header--event  {
   display: flex;
   flex-direction: row;
   margin-bottom: 162px;
   gap: 10px;
 }
 
-.notification--event__top  {
+.notification__event--top  {
   display: flex;
   flex-direction: column;
 }
 
-.notification--event__bottom  {
+.notification__event--bottom  {
   display: flex;
   flex-direction: column;
   margin-top: 200px;
@@ -398,25 +398,25 @@
   align-items: center;
 }
 
-.contact--wrapper  {
+.contact__wrapper  {
   display: flex;
   flex-direction: row;
   gap: 203px;
 }
 
-.contact--information  {
+.contact__information  {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
-.contact--information__address, .contact--information__phone, .contact--information__email   {
+.contact__information--address, .contact__information--phone, .contact__information--email   {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.about--navigation  {
+.about__navigation  {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -424,8 +424,19 @@
   padding-bottom: 64px;
 }
 
-.about--body img  {
+.about__body img  {
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.team__wrapper  {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.team__name  {
+  display: flex;
+  flex-direction: column;
 }

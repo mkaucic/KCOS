@@ -1,22 +1,22 @@
-<nav class="nav--desktop">
-  <div class="layout--main flex--between navigation--header">
-    <%= link_to root_path, class:"nav--desktop__logo" do %>
+<nav class="nav__desktop">
+  <div class="layout--main flex--between navigation__header">
+    <%= link_to root_path, class:"nav__desktop--logo" do %>
       <%= image_tag 'logo.svg' %>
     <% end %>
-    <div class="navigation--header__links">
+    <div class="navigation__header--links">
       <%= render 'layouts/navigation_links' %>
     </div>
-    <div class="navigation--header__event">
-      <div class="navigation--rectangle">
+    <div class="navigation__header--event">
+      <div class="navigation__rectangle">
         <%= image_tag 'rectangle.svg' %>
       </div>
-      <div class="navigation--event">
+      <div class="navigation__event">
         <% if @foremost_event and !@foremost_event.start_date.blank? and !@foremost_event.headline.blank? and !@foremost_event.slug.blank? %>
           <%= link_to @foremost_event.headline, event_path(@foremost_event.slug) %>
         <% end %>
       </div>
     </div>
-    <div class="navigation--header__socials">
+    <div class="navigation__header--socials">
       <% SocialNetwork.all.each do |links| %>
         <% if links.name == "Facebook" && !links.url.empty? %>
           <%= link_to links.url, title: links.name do %>
@@ -40,7 +40,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="navigation--header__legals">
+    <div class="navigation__header--legals">
         <%= render 'layouts/legal_links' %>
     </div>
   </div>

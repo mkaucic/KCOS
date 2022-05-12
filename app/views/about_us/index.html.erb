@@ -1,34 +1,34 @@
 <div class="about">
-    <div class="about--wrapper">
-    <div class="about--navigation">
-      <div class="about--navigation__center">
+    <div class="about__wrapper">
+    <div class="about__navigation">
+      <div class="about__navigation--center">
         <% unless @about_us_body.nil? %>
           O centru
         <% end %>
       </div>
-      <div class="about--navigation__team">
+      <div class="about__navigation--team">
         <% unless @team.nil? %>
           Tim
         <% end %>
       </div>
-      <div class="about--navigation__venues">
+      <div class="about__navigation--venues">
         <% unless @venues.nil? %>
           Prostori
         <% end %>
       </div>
     </div>
-    <div class="about--body">
-      <div class="about--body__center">
+    <div class="about__body">
+      <div class="about__body--center">
         <% unless @about_us_body.nil? %>
           <%= render 'about_us/about' %>
         <% end %>
       </div>
-      <div class="about--body__team">
+      <div class="about__body--team">
         <% unless @team.nil? %>
           <%= render 'about_us/team' %>
         <% end %>
       </div>
-      <div class="about--body__venues">
+      <div class="about__body--venues">
         <% unless @venues.nil? %>
           <%= render 'about_us/venues' %>
         <% end %>

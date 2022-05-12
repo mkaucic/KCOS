@@ -1,26 +1,26 @@
-.notification--area  {
+.notification__area  {
     position: relative;
     max-width: 1380px;
 }
 
-.notification--area img  {
+.notification__area img  {
     width: 100%;
     object-fit: cover;
     position: absolute;
 }
 
-.notification--event__title, .notification--event__text  {
+.notification__event--title, .notification__event--text  {
     z-index: 1;
 }
 
-.notification--event__image  {
+.notification__event--image  {
     width: 100%;
     object-fit: cover;
     position: absolute;
     z-index: -1;
 }
 
-.notification--event__wrapper  {
+.notification__event--wrapper  {
     font-family: $new-font-family;
     color: $white--true;
     position: relative;
@@ -29,7 +29,7 @@
     padding-right: 251px;
 }
 
-.notification--event__title  {
+.notification__event--title  {
     font-size: 128px;
     font-weight: 800;
     font-stretch: normal;
@@ -39,7 +39,7 @@
     color: var(--white);
 }
 
-.notification--event__text  {
+.notification__event--text  {
     font-size: 21px;
     font-weight: normal;
     font-stretch: normal;
@@ -50,7 +50,7 @@
     margin-top: 35px;
 }
 
-.notification--event  {
+.notification__event  {
     position: relative;
 }
 
@@ -76,7 +76,7 @@
     color: var(--white);
 }
 
-.notification--event__link a  {
+.notification__event--link a  {
     font-weight: 500;
     text-decoration: none;
     color: var(--white);

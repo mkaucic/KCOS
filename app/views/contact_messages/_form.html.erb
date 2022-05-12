@@ -1,19 +1,19 @@
-<div class="message--title">
+<div class="message__title">
   <span class="text--semibold text--black-60 text--uppercase"><%= t('contact.message') %></span>
 </div>
 <%= form_for(ContactMessage.new, html: {class: 'form form--contact js_inline_validate js-contact_message'}, data: {validate_url: validate_contact_messages_path, resource_name: "contact_message"}, remote: true) do |f| %>
 
   <fieldset class='js_form_inputs form__fieldset'>
     <div class="form__field">
-      <%= f.text_field :full_name, placeholder: 'Ime i prezime', class: 'js_validate_me js_contact_message_full_name input message--name' %>
+      <%= f.text_field :full_name, placeholder: 'Ime i prezime', class: 'js_validate_me js_contact_message_full_name input message__name' %>
     </div>
 
     <div class="form__field">
-      <%= f.email_field :email, placeholder: 'Email', class: 'js_validate_me js_contact_message_email input message--email' %>
+      <%= f.email_field :email, placeholder: 'Email', class: 'js_validate_me js_contact_message_email input message__email' %>
     </div>
 
     <div class="form__field">
-      <%= f.text_area :message, rows: 4, placeholder: 'Poruka', class: 'js_validate_me js_contact_message_message textarea message--text' %>
+      <%= f.text_area :message, rows: 4, placeholder: 'Poruka', class: 'js_validate_me js_contact_message_message textarea message__text' %>
     </div>
   </fieldset>
 <!-- 
@@ -26,7 +26,7 @@
 
   <fieldset class='js_form_inputs form__fieldset'>
     <div class="form__field js_message_submit">
-      <%= f.submit t('send'), class: "btn btn--primary btn--small js_message_submit message--submit", data: {disable_with: "#{t('contact_message.disable')}..."} %>
+      <%= f.submit t('send'), class: "btn btn--primary btn--small js_message_submit message__submit", data: {disable_with: "#{t('contact_message.disable')}..."} %>
     </div>
   </fieldset>
 <% end %>

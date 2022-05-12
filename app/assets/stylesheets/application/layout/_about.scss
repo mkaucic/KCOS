@@ -1,23 +1,31 @@
-.about--wrapper  {
+.about__wrapper  {
     font-family: $new-font-family;
     color: $white--true;
 }
 
-.about--navigation  {
+.about__navigation  {
     z-index: 1;
     padding-top: 80px;
     padding-left: 288px;
     text-transform: uppercase;
+    color: $white--true;
+    font-size: 14px;
+    font-weight: bold; 
+    font-stretch: normal; 
+    font-style: normal; 
+    line-height: 32px;
+    letter-spacing: 2px;
+    opacity: 40%;
 }
 
-.about--body  {
+.about__body  {
 }
 
-.about--body__team, .about--body__venues  {
+.about__body--center, .about__body--venues  {               // tu mijenjaš
     display: none;
 }
 
-.center--title  {
+.center__title  {
     font-size: 48px;
     font-weight: 500;
     font-stretch: normal;
@@ -27,20 +35,94 @@
     margin-bottom: 36px;
 }
 
-.center--title, .center--text  {
+.center__title, .center__text  {
     padding-left: 288px;
     padding-right: 541px;
 }
 
-.center--text p  {
+.center__text p  {
     margin: 0;
 }
 
-.center--text  {
+.center__text  {
     font-size: 21px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 32px;
     letter-spacing: normal;
+}
+
+.about__body--team  {
+    color: black;
+    font-family: $new-font-family;
+}
+
+.about__body--team h1  {
+    font-family: $new-font-family;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 64px;
+    letter-spacing: normal;
+    color: black;
+    padding-left: 288px;
+}
+
+.team__image img  {
+    right: 0;
+    width: 660px;
+    width: auto;
+}
+
+.about__navigation  {                   
+    color: black;                       // to na bijeloj površini black, a na tamnoj white i opacity 40%
+}
+
+.team__wrapper button  {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.team__role  {
+    color: rgba(35, 31, 32, 0.6);
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal; 
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.team__name button  {
+    margin-top: 24px;
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: right;
+    color: rgba(35, 31, 32, 0.4);
+    width: 264px;
+}
+
+.team__content  {
+    padding-right: 828px;
+}
+
+.team__bio  {
+    margin-top: 36px;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+    color: #2c2627;
 }

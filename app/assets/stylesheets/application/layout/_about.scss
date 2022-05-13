@@ -21,7 +21,7 @@
 .about__body  {
 }
 
-.about__body--center, .about__body--venues  {               // tu mijenjaš
+.about__body--center, .about__body--team  {               // tu mijenjaš
     display: none;
 }
 
@@ -126,3 +126,26 @@
     letter-spacing: normal;
     color: #2c2627;
 }
+
+.about__body--venues  {
+    color: black;
+    font-family: $new-font-family;
+} 
+
+.about__body--venues h1  {
+    font-family: $new-font-family;
+    font-size: 48px;    
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 64px;
+    letter-spacing: normal;
+    color: black;
+    padding-left: 288px;
+}
+
+.venues__image img  {
+    width: auto;
+    position: static;
+}
+

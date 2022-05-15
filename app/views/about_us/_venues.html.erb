@@ -20,18 +20,31 @@
         <button><%= venue.name %></button>
       <% end %> 
     </div>
-    <div class="venues__capacity">
-      <% @venues.each_with_index do |venue, index| %>
-        <% unless venue.capacity_venues.blank? %>
-          <% venue.capacity_venues.each do |capacity| %>
-            <%= capacity.name %>
-            <%= capacity.capacity %>
+    <div class="venues__bio">
+      <h3> Kapacitet </h3>
+      <div class="venues__capacity">
+        <% @venues.each_with_index do |venue, index| %>
+          <% unless venue.capacity_venues.blank? %>
+            <% venue.capacity_venues.each do |capacity| %>
+              <div class="capacity">
+                <div class="capacity__name">
+                  <%= capacity.name %>
+                </div>
+                <div class="capacity__value">
+                  <%= capacity.capacity %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <div class="venues__tag">
-
+      </div>
+      <div class="venues__description">
+        <% @venues.each_with_index do |venue, index| %>
+          <%= venue.description do |description| %>
+            <% description.name %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 

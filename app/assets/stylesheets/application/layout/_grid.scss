@@ -449,6 +449,7 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   top: 0; 
+  right: 0;
 }
 
 .venues__image img:nth-of-type(1)  {
@@ -467,19 +468,20 @@
 .venues__places  {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 
 .venues__places button:nth-of-type(1)  {
-  order: 2;
-}
-
-.venues__places button:nth-of-type(2)  {
   order: 1;
 }
 
-.venues__places button:nth-of-type(3)  {
+.venues__places button:nth-of-type(2)  {
   order: 5;
+}
+
+.venues__places button:nth-of-type(3)  {
+  order: 2;
 }
 
 .venues__places button:nth-of-type(4)  {
@@ -500,4 +502,27 @@
 
 .venues__places button:nth-of-type(8)  {
   order: 8;
+}
+
+.venues__flex  {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 82px;
+}
+
+.venues__bio  {
+  display: flex;
+  flex-direction: column;
+}
+
+.venues__capacity  {
+  display: flex;
+  flex-direction: column;
+}
+
+.capacity  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

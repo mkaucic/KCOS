@@ -5,6 +5,9 @@ function showCenter ()  {
     document.getElementById('button__center').style.color = 'white';
     document.getElementById('button__team').style.color = 'white';
     document.getElementById('button__venues').style.color = 'white';
+    document.getElementById('button__center').style.opacity = '100%';
+    document.getElementById('button__team').style.opacity = '40%';
+    document.getElementById('button__venues').style.opacity = '40%';
 }
 
 function showTeam ()  {
@@ -14,6 +17,9 @@ function showTeam ()  {
     document.getElementById('button__center').style.color = 'black';
     document.getElementById('button__team').style.color = 'black';
     document.getElementById('button__venues').style.color = 'black';
+    document.getElementById('button__center').style.opacity = '40%';
+    document.getElementById('button__team').style.opacity = '100%';
+    document.getElementById('button__venues').style.opacity = '40%';
 }
 
 function showVenues ()  {
@@ -23,4 +29,7 @@ function showVenues ()  {
     document.getElementById('button__center').style.color = 'black';
     document.getElementById('button__team').style.color = 'black';
     document.getElementById('button__venues').style.color = 'black';
+    document.getElementById('button__center').style.opacity = '40%';
+    document.getElementById('button__team').style.opacity = '40%';
+    document.getElementById('button__venues').style.opacity = '100%';
 }

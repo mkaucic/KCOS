@@ -18,7 +18,7 @@
     opacity: 40%;
 }
 
-.about__body--center, .about__body--team  {               // tu mijenjaš
+.about__body--venues, .about__body--team  {               // tu mijenjaš
     display: none;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .about__navigation  {                   
-    color: black;                       // to na bijeloj površini black, a na tamnoj white i opacity 40%
+    color: white;                      
 }
 
 .team__wrapper button  {

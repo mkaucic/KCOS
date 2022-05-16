@@ -3,17 +3,17 @@
     <div class="about__navigation" id="about__navigation">
       <div class="about__navigation--center" onclick=showCenter()>
         <% unless @about_us_body.nil? %>
-          O centru
+          <button class="about__navigation--button" id="button__center">O centru</button>
         <% end %>
       </div>
       <div class="about__navigation--team" onclick=showTeam()>
         <% unless @team.nil? %>
-          Tim
+          <button class="about__navigation--button" id="button__team">Tim</button>
         <% end %>
       </div>
       <div class="about__navigation--venues" onclick=showVenues()>
         <% unless @venues.nil? %>
-          Prostori
+          <button class="about__navigation--button" id="button__venues">Prostori</button>
         <% end %>
       </div>
     </div>

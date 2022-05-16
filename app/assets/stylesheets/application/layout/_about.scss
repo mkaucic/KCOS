@@ -7,15 +7,6 @@
     z-index: 1;
     padding-top: 80px;
     padding-left: 288px;
-    text-transform: uppercase;
-    color: $white--true;
-    font-size: 14px;
-    font-weight: bold; 
-    font-stretch: normal; 
-    font-style: normal; 
-    line-height: 32px;
-    letter-spacing: 2px;
-    opacity: 40%;
 }
 
 .about__body--venues, .about__body--team  {               // tu mijenjaš
@@ -75,6 +66,22 @@
 
 .about__navigation  {                   
     color: white;                      
+}
+
+.about__navigation--button  {
+    padding: 0;
+    text-transform: uppercase;
+    color: $white--true;
+    font-size: 14px;
+    font-weight: bold; 
+    font-stretch: normal; 
+    font-style: normal; 
+    line-height: 32px;
+    letter-spacing: 2px;
+    opacity: 40%;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
 }
 
 .team__wrapper button  {

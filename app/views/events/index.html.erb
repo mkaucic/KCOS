@@ -1,44 +1,74 @@
-<% @events.each_with_index do |events, index| %>
-  <% unless events.image.blank? %>
-    <%= image_tag events.image %>
+<div class="events">
+  <% @events.each_with_index do |events, index| %>
+    <% unless events.image.blank? %>
+      <%= image_tag events.image %>
+    <% end %>
   <% end %>
-<% end %>
-<%= link_to all_events_path do %>
-  <%= inline_svg 'icons/date.svg' %>
-  Sva događanja
-<% end %>
+  <%= link_to all_events_path do %>
+    <div class="events__all">
+      <%= inline_svg 'icons/date.svg' %>
+      <button class="events__all--button">Sva događanja</button>
+    </div>
+  <% end %>
+</div>
 
 <div class="glide js-glide">
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       <% @events.each_with_index do |events, index| %>
         <li class="glide__slide">
-            <%= link_to event_path(events.slug) do %>
-              <%=events.event_type%>
-            <% end %>
-            <%=events.start_date.to_formatted_s(:custom) %> <% if events.end_date %>- <%=events.end_date.to_formatted_s(:custom)  %> <% end %>
-            <% if events.starting_at %>
-              <%=events.starting_at.to_s(:time) %>
-            <% end %>
-            <%= link_to event_path(events.slug) do %>
-              <%= events.event_type %>
-            <% end %>
-            <h1>
+          <div class="events__start">
+            <div class="events__start-date">
+              <div class="events__start-date--icon">
+                <%= image_tag 'icons/events/rectangle.png' %>
+              </div>
+              <div class="events__start-date--text">
+                <%=events.start_date.to_formatted_s(:custom) %> <% if events.end_date %> <% end %>
+              </div>
+          </div>
+          <% if events.starting_at %>
+            <div class="events__start-time">
+              <div class="events__start-time--icon">
+                <%= inline_svg 'icons/events/event-time.svg'%>
+              </div>
+              <div class="events__start-time--text">
+                <%=events.starting_at.to_s(:time) %>
+              </div>
+            </div>
+          <% end %>
+          </div>
+          <div class="events__content">
+            <div class="events__content--flex">
               <%= link_to event_path(events.slug) do %>
-                <%= events.headline %>
+                <div class="events__type">
+                  <%=events.event_type%>
+                </div>
               <% end %>
-            </h1>
-            <% unless events.brief.nil? %>
-              <%= sanitize events.brief %>
-            <% end %>
+              <div class="events__headline">
+                <h1>
+                  <%= link_to event_path(events.slug) do %>
+                    <%= events.headline %>
+                  <% end %>
+                </h1>
+              </div>
+            </div>
+            <div class="events__description">
+              <% unless events.brief.nil? %>
+                <%= sanitize events.brief %>
+              <% end %>
+            </div>
+          </div>
         </li>
       <% end %>
     </ul>
+  
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <button class="glide__bullet" data-glide-dir="=0">01</button>
+    <button class="glide__bullet" data-glide-dir="=1">02</button>
+    <button class="glide__bullet" data-glide-dir="=2">03</button>
   </div>
-  <% @starred_count.times do |number|%>
-  <% @inline = ""+"0#{number+1}"+"" %>
-  <%= @inline.html_safe %>
-  <% end %>
 </div>
+
+<button class="tickets__button">Kupi ulaznicu</div>
 
 <script>new Glide('.js-glide').mount();</script>

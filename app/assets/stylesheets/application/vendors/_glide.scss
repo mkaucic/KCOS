@@ -72,3 +72,37 @@
 .glide--rtl {
     direction: rtl;
 }
+
+
+/*------------------------------------*\
+# JA
+\*------------------------------------*/
+
+
+.glide__bullet  {
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: $white--true;
+    opacity: 30%;
+    font-family: $new-font-family;
+    font-size: 21px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;  
+    padding: 0;
+}
+
+.glide__bullet--active  {
+    font-size: 28px;
+    opacity: 100%;
+}
+
+.glide__bullet--active::after  {
+    content: "";
+    height: 80px;
+    width: 2px;
+    background-color: $white--true;
+}

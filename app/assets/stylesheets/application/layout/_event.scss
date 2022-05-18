@@ -1,0 +1,109 @@
+.events  {
+    color: $white--true;
+    z-index: 1;
+    font-family: $new-font-family;
+}
+
+.events a  {
+    text-decoration: none;
+}
+
+.events img  {
+    z-index: -1;
+}
+
+.js-glide  {
+    color: $white--true;
+    max-width: 1380px;
+}
+
+.tickets__button  {
+    color: $white--true;
+    margin-left: 288px;
+    text-transform: uppercase;
+    border-radius: 0;
+    height: 48px;
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.29;
+    letter-spacing: 2px;
+    color: black;
+    margin-top: 56px;
+}
+
+.events__all--button  {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $white--true;
+    padding: 0;
+}
+
+.events__start-date--icon img  {
+    object-fit: contain;
+    height: 20px;
+    width: 60px;
+    position: static;
+}
+
+.events__start-time svg  {
+    width: 56px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.events__start-date--text, .events__start-time--text  {
+    font-family: $new-font-family;
+    font-size: 21px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.52;
+    letter-spacing: normal;
+    color: $white--true;
+}
+
+.events__type  {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.29;
+    letter-spacing: 2px;
+    text-align: right;
+    color: $white--true;
+    text-transform: uppercase;
+}
+
+.events__content a  {
+    text-decoration: none;
+}
+
+.events__headline h1 a  {
+    font-family: $new-font-family;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33; 
+    letter-spacing: normal;
+    color: $white--true;
+    padding-right: 252px;
+}
+
+.events__description  {
+    font-family: $new-font-family;
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.52;
+    letter-spacing: normal;
+}

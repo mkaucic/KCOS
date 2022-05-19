@@ -1,7 +1,13 @@
-<%= link_to events_path, class: 'btn btn--icon btn--on-top btn--black' do %>
-  <%= inline_svg 'icons/date--black.svg' %>
-  Top događanja
-<% end %>
+<div class="events__top">
+  <%= link_to events_path, class: 'btn btn--icon btn--on-top btn--black events__top--wrapper' do %>
+    <div class="events__top--icon">
+      <%= inline_svg 'icons/star.svg' %>
+    </div>
+    <div class="events__top--text">
+      Top događanja
+    </div>
+  <% end %>
+</div>
 <% @event.each do |events| %>
   <% unless events.blank? %>
     <%= image_tag events.image, class: 'full--width object-fit--cover' unless events.image.blank? %>

@@ -93,16 +93,24 @@
     line-height: normal;
     letter-spacing: normal;  
     padding: 0;
+    
+}
+
+.glide__bullet::after  {
+    content: "";
+    height: 0px;
+    width: 2px;
+    background-color: $white--true;
+    
+    transition: all 0.3s ease-in-out;
 }
 
 .glide__bullet--active  {
     font-size: 28px;
     opacity: 100%;
+    height: 80px;
 }
 
 .glide__bullet--active::after  {
-    content: "";
     height: 80px;
-    width: 2px;
-    background-color: $white--true;
 }

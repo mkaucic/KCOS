@@ -5,10 +5,14 @@
     <% end %>
   <% end %>
   <%= link_to all_events_path do %>
-    <div class="events__all">
-      <%= inline_svg 'icons/date.svg' %>
-      <button class="events__all--button">Sva događanja</button>
-    </div>
+  <div class="events__all--wrapper">
+    <button class="events__all">
+      <div class="events__all--icon">
+        <%= inline_svg 'icons/date.svg' %>
+      </div>
+      <div class="events__all--text">Sva događanja</div>
+    </button>
+  </div>
   <% end %>
 </div>
 

@@ -34,7 +34,7 @@
     margin-top: 56px;
 }
 
-.events__all--button  {
+.events__all  {
     font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
@@ -44,6 +44,20 @@
     text-align: center;
     color: $white--true;
     padding: 0;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.events__all--text  {
+    padding-right: 5px;
+}
+
+.events__all:hover  {
+    background-color: #9f9f9f;
 }
 
 .events__start-date--icon img  {
@@ -106,4 +120,25 @@
     font-style: normal;
     line-height: 1.52;
     letter-spacing: normal;
+}
+
+.events__top--wrapper  {
+    background-color: $white--true;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 0;
+}
+
+.events__top--wrapper:hover  {
+    background-color: #9f9f9f;
+    color: black;
 }

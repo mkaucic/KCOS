@@ -1,11 +1,33 @@
-<% @pp_year.each do |year|  %>
-  <%= year %>
-<% end %>
-<% @pp_year.each do |year|  %>
-  <%@public_procurements.each do |file|  %>
-    <% if file.year == year.to_i %>
-      <%= file.title %>
-      <%=link_to "Preuzmi", file.link_url, target: "_blank" %>
+<div class="public-procurements">
+  <div class="public-procurements__nav">
+    <div class="public-procurements__nav--top">
+      <div class="public-procurements__title">Javna nabava</div>
+      <div class="public-procurements__line--vertical"></div>
+      <div class="public-procurements__year">
+        <% @pp_year.each do |year|  %>
+          <%= year %>
+        <% end %>
+      </div>
+      <div class="public-procurements__triangle"></div>
+    </div>
+    <div class="public-procurements__nav--bottom">
+    </div>
+  </div>
+  <div class="public-procurements__flex">
+    <% @pp_year.each do |year|  %>
+      <%@public_procurements.each do |file|  %>
+        <% if file.year == year.to_i %>
+          <div class="public-procurements__item">
+            <div class="public-procurements__file">
+              <%= file.title %>
+            </div>
+            <button class="public-procurements__button--save">
+              <%=link_to "Preuzmi", file.link_url, target: "_blank" %>
+            </div>
+          </div>
+          <div class="public-procurements__line--horizontal"></div>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+</div>

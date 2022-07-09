@@ -8,18 +8,47 @@
     </div>
   <% end %>
 </div>
-<% @event.each do |events| %>
-  <% unless events.blank? %>
-    <%= image_tag events.image, class: 'full--width object-fit--cover' unless events.image.blank? %>
-    <%= events.start_date.to_formatted_s(:custom)  %>
-    <% if events.end_date %>
-      <%= "- " + events.end_date.to_formatted_s(:custom) %>
-    <% end %>
-    <% if events.starting_at %>
-      <%= " @ " + events.starting_at.to_s(:time) %>
-    <% end %>
-    <%=events.event_type%>
-    <%= link_to events.headline, event_path(events.slug), class: 'link link--black' %>
-    <%=link_to events.price, "#", target: "_blank", class: 'btn btn--black text--uppercase btn--small text--center' %>
-  <% end %>
-<% end %>
+<div class="events__all--wrapper">
+  <div class="wrapper__header">
+    <div class="wrapper__triangle--left"></div>
+    <div class="wrapper__triangle--right"></div>
+    <div class="wrapper__date">
+      Veljača 2020
+    </div>
+    <div class="line--vertical"></div>
+    <div class="wrapper__filter--text">
+      Filtriranje prikaza
+    </div>
+    <div class="wrapper__triangle--down"></div>
+  </div>
+  <div class="wrapper__edge">
+    <div class="line--horizontal--dark"></div>
+    <div class="wrapper__content">
+      <% @event.each do |events| %>
+        <% unless events.blank? %>
+          <div class="wrapper__item">
+            <div class="wrapper__item--date">
+              <%= events.start_date.to_formatted_s(:custom)  %>
+            </div>
+            <div class="wrapper__item--time">
+              <% if events.starting_at %>
+                <%= events.starting_at.to_s(:time) %>
+              <% end %>
+            </div>
+            <div class="wrapper__item--type">
+              <%=events.event_type%>
+            </div>
+            <div class="wrapper__item--name">
+              <%= link_to events.headline, event_path(events.slug), class: 'link link--black' %>
+            </div>
+            <div class="wrapper__item--tickets">
+              <%=link_to events.price, "#", target: "_blank", class: 'btn btn--black text--uppercase btn--small text--center' %>
+            </div>
+          </div>
+          <div class="line--horizontal--light"></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

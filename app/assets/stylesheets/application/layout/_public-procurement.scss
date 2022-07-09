@@ -23,13 +23,13 @@
     padding-right: 108px;
 }
 
-.public-procurements__line--vertical  {
+.line--vertical  {
     height: 48px;
     width: 1px;
     background-color: black;
 }
 
-.public-procurements__nav--bottom  {
+.line--horizontal--dark  {
     height: 1px;
     width: 1272px;
     background-color: black;
@@ -58,7 +58,7 @@
     padding-bottom: 24px;
 }
 
-.public-procurements__line--horizontal  {
+.line--horizontal--light  {
     height: 1px;
     width: 1272px;
     background-color: rgba(35, 31, 32, 0.1);

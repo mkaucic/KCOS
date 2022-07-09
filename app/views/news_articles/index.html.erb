@@ -1,29 +1,68 @@
-<% @news_articles.each_with_index do |news_article, index| %>
-  <% unless news_article.image.blank? %>
-    <%= image_tag news_article.image %>
+<div class="news">
+  <% @news_articles.each_with_index do |news_article, index| %>
+    <% unless news_article.image.blank? %>
+      <%= image_tag news_article.image %>
+    <% end %>
   <% end %>
-<% end %>
-<%= link_to all_news_articles_path do %>
-  <%= inline_svg 'icons/flag.svg' %>
-  Sve novosti
-<% end %>
-<% @news_articles.each_with_index do |news_article, index| %>
-  <%= link_to news_article_path(news_article.slug) do %>
-    <%=news_article.news_type%>
+  <%= link_to all_news_articles_path do %>
+  <div class="news--wrapper">
+    <button class="news__all">
+      <div class="news__all--icon">
+        <%= inline_svg 'icons/flag.svg' %>
+      </div>
+      <div class="news__all--text">Sve novosti</div>
+    </button>
+  </div>
   <% end %>
-  <%= news_article.publish_date.to_formatted_s(:custom) %>
-  <%= link_to news_article_path(news_article.slug) do %>
-    <%= news_article.news_type %>
-  <% end %>
-  <%= link_to news_article_path(news_article.slug) do %>
-    <%= news_article.headline %>
-  <% end %>
-  <% unless news_article.brief.nil? %>
-    <%= sanitize news_article.brief %>
-  <% end %>
-  <%= link_to 'Pročitaj više', news_article_path(news_article.slug) %>
-<% end %>
-<% @starred_count.times do |number|%>
-  <% @inline = ""+"0#{number+1}"+"" %>
-  <%= @inline.html_safe %>
-<% end %>
+</div>
+
+<div class="glide js-glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <% @news_articles.each_with_index do |news_article, index| %>
+        <li class="glide__slide">
+          <div class="news__start">
+            <div class="news__start-date">
+              <div class="news__start-date--icon">
+                <%= image_tag 'icons/events/rectangle.png' %>
+              </div>
+              <div class="news__start-date--text">
+                <%= news_article.publish_date.to_formatted_s(:custom) %>
+              </div>
+            </div>
+          </div>
+          <div class="news__content">
+            <div class="news__content--flex">
+              <%= link_to news_article_path(news_article.slug) do %>
+                <div class="news__type">
+                  <%=news_article.news_type%>
+                </div>
+              <% end %>
+              <div class="news__headline">
+                <h1>
+                  <%= link_to news_article_path(news_article.slug) do %>
+                    <%= news_article.headline %>
+                  <% end %>
+                </h1>
+              </div>
+            </div>
+            <div class="news__description">
+              <% unless news_article.brief.nil? %>
+                <%= sanitize news_article.brief %>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <button class="glide__bullet" data-glide-dir="=0">01</button>
+    <button class="glide__bullet" data-glide-dir="=1">02</button>
+    <button class="glide__bullet" data-glide-dir="=2">03</button>
+  </div>
+</div>
+
+<button class="news__button">Pročitaj više</button>
+
+<script>new Glide('.js-glide').mount();</script>

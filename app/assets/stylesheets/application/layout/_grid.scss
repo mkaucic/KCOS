@@ -650,3 +650,79 @@
   display: flex;
   flex-direction: column;
 }
+
+.news__all  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.news__all--wrapper  {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 57px;
+  padding-right: 103px;
+}
+
+.news__start  {
+  display: flex;
+  flex-direction: row;
+  padding-left: 288px;
+  margin-top: 160px;
+  gap: 50px;
+}
+
+.news__start-date  {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
+.news__start-time  {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.news__content--flex  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 157px;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.news__content  {
+  display: flex;
+  flex-direction: column;
+}
+
+.news__description  {
+  padding-left: 288px;
+}
+
+.news__top--wrapper  {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.news__top  {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 57px;
+  padding-right: 108px;
+}
+
+.news--wrapper  {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

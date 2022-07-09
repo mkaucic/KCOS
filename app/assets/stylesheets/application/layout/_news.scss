@@ -1,0 +1,141 @@
+.news  {
+    color: $white--true;
+    z-index: 1;
+    font-family: $new-font-family;
+}
+
+.news a  {
+    text-decoration: none;
+}
+
+.news img  {
+    z-index: -1;
+}
+
+.news__button  {
+    color: $white--true;
+    margin-left: 288px;
+    text-transform: uppercase;
+    border-radius: 0;
+    height: 48px;
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.29;
+    letter-spacing: 2px;
+    color: black;
+    margin-top: 56px;
+}
+
+.news__all  {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $white--true;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    margin-top: 57px;
+    margin-right: 108px;
+}
+
+.news__all--text  {
+    padding-right: 5px;
+}
+
+.news__all:hover  {
+    background-color: #9f9f9f;
+}
+
+.news__start-date--icon img  {
+    object-fit: contain;
+    height: 20px;
+    width: 60px;
+    position: static;
+}
+
+.news__start-time svg  {
+    width: 56px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.news__start-date--text, .news__start-time--text  {
+    font-family: $new-font-family;
+    font-size: 21px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.52;
+    letter-spacing: normal;
+    color: $white--true;
+}
+
+.news__type  {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.29;
+    letter-spacing: 2px;
+    text-align: right;
+    color: $white--true;
+    text-transform: uppercase;
+}
+
+.news__content a  {
+    text-decoration: none;
+}
+
+.news__headline h1 a  {
+    font-family: $new-font-family;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33; 
+    letter-spacing: normal;
+    color: $white--true;
+    padding-right: 252px;
+}
+
+.news__description  {
+    font-family: $new-font-family;
+    font-size: 21px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.52;
+    letter-spacing: normal;
+}
+
+.news__top--wrapper  {
+    background-color: $white--true;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 0;
+}
+
+.news__top--wrapper:hover  {
+    background-color: #9f9f9f;
+    color: black;
+}

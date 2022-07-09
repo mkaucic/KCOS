@@ -1,7 +1,9 @@
 <div class="events">
   <% @events.each_with_index do |events, index| %>
     <% unless events.image.blank? %>
-      <%= image_tag events.image %>
+      <div class="events__image js-slide-image">
+        <%= image_tag events.image %>
+      </div>
     <% end %>
   <% end %>
   <%= link_to all_events_path do %>
@@ -75,4 +77,13 @@
 
 <button class="tickets__button">Kupi ulaznicu</button>
 
-<script>new Glide('.js-glide').mount();</script>
+<script>
+  var glide = new Glide('.glide')
+  glide.mount();
+
+  const images = document.querySelectorAll('.js-slide-image');
+  glide.on('move.after', function() {
+    images.forEach(image => image.classList.remove('is-active')); // provrtiš sve slike i makneš im active klasu
+    images[glide.index].classList.add('is-active'); // nađeš sliku s istim indexom kao glide.index i daš joj active klasu
+})
+</script>

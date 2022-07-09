@@ -10,6 +10,11 @@
 
 .events img  {
     z-index: -1;
+    opacity: 0;
+}
+
+.is-active img {
+    opacity: 1;
 }
 
 .js-glide  {

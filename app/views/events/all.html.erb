@@ -19,7 +19,13 @@
     <div class="wrapper__filter--text">
       Filtriranje prikaza
     </div>
-    <div class="wrapper__triangle--down"></div>
+    <div class="wrapper__dropdown--content">
+      <div class="wrapper__triangle--down" onclick="dropdownFilter()"></div>
+      <div class="wrapper__dropdown" id="wrapper__dropdown">
+        <p>Uzlazno</p>
+        <p>Silazno</p>
+      </div>
+    </div>
   </div>
   <div class="wrapper__edge">
     <div class="line--horizontal--dark"></div>
@@ -52,3 +58,13 @@
   </div>
 </div>
 
+<script>
+  function dropdownFilter() {
+    var x = document.getElementById("wrapper__dropdown");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+  }
+</script>

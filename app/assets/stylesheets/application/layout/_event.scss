@@ -159,6 +159,7 @@
     border-style: solid;
     border-width: 6px 6px 6px 0;
     border-color: transparent #1a1a1a transparent transparent;
+    cursor: pointer;
 
 }
 
@@ -168,6 +169,8 @@
     border-style: solid;
     border-width: 6px 0 6px 6px;
     border-color: transparent transparent transparent #1a1a1a;
+    cursor: pointer;
+    
 }
 
 .wrapper__triangle--down  {
@@ -176,6 +179,7 @@
     border-style: solid;
     border-width: 6px 6px 0 6px;
     border-color: #1a1a1a transparent transparent transparent;
+    cursor: pointer;
 }
 
 .wrapper__date  {
@@ -193,6 +197,14 @@
 .wrapper__header  {
     margin-top: 57px;
     margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #1a1a1a;
+    font-family: $new-font-family;
 }
 
 .wrapper__item--type  {
@@ -237,7 +249,7 @@
 }
 
 .wrapper__item--date  {
-    margin-right: 102px;
+    margin-right: 145px;
 }
 
 .wrapper__item--time  {
@@ -246,4 +258,32 @@
 
 .wrapper__item--tickets  {
     margin-left: auto;
+}
+
+.wrapper__dropdown  {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #1a1a1a;
+    font-family: $new-font-family;
+    padding-left: 10px;
+}
+
+.wrapper__dropdown--content  {
+    position: relative;
+    display: inline-block;
+}
+
+.wrapper__dropdown p  {
+    cursor: pointer;
 }

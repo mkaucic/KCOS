@@ -28,7 +28,7 @@
         <% unless events.blank? %>
           <div class="wrapper__item">
             <div class="wrapper__item--date">
-              <%= events.start_date.to_formatted_s(:custom)  %>
+              <%= events.start_date.strftime("%d/%m") %>
             </div>
             <div class="wrapper__item--time">
               <% if events.starting_at %>
@@ -38,9 +38,9 @@
             <div class="wrapper__item--type">
               <%=events.event_type%>
             </div>
-            <div class="wrapper__item--name">
+            <h5 class="wrapper__item--name">
               <%= link_to events.headline, event_path(events.slug), class: 'link link--black' %>
-            </div>
+            </h5>
             <div class="wrapper__item--tickets">
               <%=link_to events.price, "#", target: "_blank", class: 'btn btn--black text--uppercase btn--small text--center' %>
             </div>

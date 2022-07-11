@@ -747,19 +747,6 @@
 .wrapper__item  {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-
-.wrapper__item--tickets a  {
-  text-decoration: none;
-  font-family: $new-font-family;
-  color: $white--true;
-  border-radius: 0;
-  height: 48px;
-  font-weight: bold;
-  font-size: 14px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 32px;
-  letter-spacing: normal;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }

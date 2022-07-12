@@ -10,10 +10,10 @@
 </div>
 <div class="events__all--wrapper">
   <div class="wrapper__header">
-    <div class="wrapper__triangle--left"></div>
-    <div class="wrapper__triangle--right"></div>
-    <div class="wrapper__date">
-      Veljača 2020
+    <div class="wrapper__triangle--left" id="wrapper__triangle--left"></div>
+    <div class="wrapper__triangle--right" id="wrapper__triangle--right"></div>
+    <div class="wrapper__date" id="wrapper__date">
+      
     </div>
     <div class="line--vertical"></div>
     <div class="wrapper__filter--text">
@@ -67,4 +67,38 @@
         x.style.display = "none";
       }
   }
+
+  const months = ["Siječanj 2022", "Veljača 2022", "Ožujak 2022", "Travanj 2022","Svibanj 2022", "Lipanj 2022", "Srpanj 2022", "Kolovoz 2022", "Rujan 2022", "Listopad 2022", "Studeni 2022", "Prosinac 2022"];
+  let current = 6;
+
+  function nextItem() {
+    current = current + 1; // increase current by one
+    current = current % months.length; // if we've gone too high, start from `0` again
+    return months[current]; // give us back the item of where we are now
+  }
+
+  function prevItem() {
+      if (current === 0) { // current would become 0
+          current = months.length; // so put it at the other end of the array
+      }
+      current = current - 1; // decrease by one
+      return months[current]; // give us back the item of where we are now
+  }
+
+  window.addEventListener('load', function () {
+    document.getElementById('wrapper__date').textContent = months[6]; // initial value
+    document.getElementById('wrapper__triangle--left').addEventListener(
+        'click', // we want to listen for a click
+        function (e) { // the e here is the event itself
+            document.getElementById('wrapper__date').textContent = prevItem();
+        }
+    );
+    
+    document.getElementById('wrapper__triangle--right').addEventListener(
+        'click', // we want to listen for a click
+        function (e) { // the e here is the event itself
+            document.getElementById('wrapper__date').textContent = nextItem();
+        }
+    );
+});
 </script>

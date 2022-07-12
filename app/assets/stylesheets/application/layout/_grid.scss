@@ -802,3 +802,18 @@
 .event-single__image  {
   grid-area: 1 / 2 / 2 / 3;
 }
+
+.event-single__date  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 11px;
+  gap: 16px;
+}
+
+.event-single__time  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}

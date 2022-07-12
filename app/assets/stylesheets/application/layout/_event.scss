@@ -295,8 +295,8 @@
 
 .event-single__image img  {
     object-fit: cover;
-    width: 660px;
-    height: 980px;
+    max-width: 660px;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
@@ -324,7 +324,7 @@
     line-height: normal;
     letter-spacing: -1px;
     color: #272223;
-    margin-bottom: 0;
+    margin-bottom: 16px;
 }
 
 .event-single__content  {
@@ -356,4 +356,26 @@
     color: #272223;
     margin-top: 38px;
     margin-bottom: 0;
+}
+
+.event-single__date--text  {
+    color: #272223;
+    font-family: $new-font-family;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.event-single__time--text  {
+    margin-bottom: 5px;
+}
+
+.event-single__date--icon  {
+    height: 20px;
+    width: 60px;
 }

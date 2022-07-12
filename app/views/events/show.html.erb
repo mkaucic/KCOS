@@ -14,7 +14,7 @@
       </div>
       <div class="event-single__type">
         <div class="event-single__type--icon">
-          <%= inline_svg 'icons/event-rectangle.svg' %>
+          <%= inline_svg 'icons/rectangle-grids.svg' %>
         </div>
         <div class="event-single__type--text">
           <%=@event.event_type %>
@@ -23,6 +23,22 @@
       <h2 class="event-single__headline">
         <%=@event.headline %>
       </h2>
+      <div class="event-single__date">
+        <div class="event-single__date--icon">
+          <%= inline_svg 'icons/rectangle-date.svg' %>
+        </div>
+        <div class="event-single__date--text">
+          <% unless @event.start_date.blank? %><%=@event.start_date.to_formatted_s(:custom)  %> <% if @event.end_date %>- <%=@event.end_date.to_formatted_s(:custom)  %> <% end %> <% end %>
+        </div>
+      </div>
+      <div class="event-single__time">
+        <div class="event-single__time--icon">
+          <%= inline_svg 'icons/event-rectangle.svg' %>
+        </div>
+        <div class="event-single__time--text">
+          <% unless @event.starting_at.blank? %><%=@event.starting_at.to_s(:time) if @event.starting_at != nil %> <% end %>
+        </div>
+      </div>
       <div class="event-single__text">
         <%=@event.text.html_safe %>
       </div>

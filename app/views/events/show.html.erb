@@ -1,20 +1,42 @@
-<% content_for :image, @event.image_url(:medium)%>
-<% content_for :description, seo_description((@event.brief.nil? ? @event.text : @event.brief)) %>
-<% content_for :title, "KC - " + @event.headline%>
-<%= link_to events_path do %>
-  Povratak na Događanja
-<% end %>
-<%=@event.event_type %>
-<%=@event.headline %>
-<% if @event.event_images.blank? %>
-  <% unless @event.image.blank? %>
-    <%= image_tag @event.image %>
-  <% end %>
-<% else %>
-  <% @event.event_images.each do |image| %>
-    <%= image_tag image.image %>
-  <% end %>
-<% end %>
-<% unless @event.start_date.blank? %><%=@event.start_date.to_formatted_s(:custom)  %> <% if @event.end_date %>- <%=@event.end_date.to_formatted_s(:custom)  %> <% end %> <% end %>
-<% unless @event.starting_at.blank? %><%=@event.starting_at.to_s(:time) if @event.starting_at != nil %> <% end %>
-<%=render_with_tags(@event.text) %>
+<div class="event-single">
+  <% content_for :image, @event.image_url(:medium)%>
+  <% content_for :description, seo_description((@event.brief.nil? ? @event.text : @event.brief)) %>
+  <% content_for :title, "KC - " + @event.headline%>
+
+  <div class="event-single__wrapper">
+    <div class="event-single__content">
+      <div class="event-single__header">
+      <div class="event-single__header--content">
+        <div class="event-single__rectangle wrapper__triangle--left"></div>
+        <%= link_to events_path do %>
+          Povratak na Događanja
+        <% end %>
+      </div>
+      <div class="event-single__type">
+        <div class="event-single__type--icon">
+          <%= inline_svg 'icons/event-rectangle.svg' %>
+        </div>
+        <div class="event-single__type--text">
+          <%=@event.event_type %>
+        </div>
+      </div>
+      <h2 class="event-single__headline">
+        <%=@event.headline %>
+      </h2>
+      <div class="event-single__text">
+        <%=@event.text.html_safe %>
+      </div>
+    </div>
+  </div>
+  <div class="event-single__image">
+    <% if @event.event_images.blank? %>
+        <% unless @event.image.blank? %>
+          <%= image_tag @event.image %>
+        <% end %>
+      <% else %>
+        <% @event.event_images.each do |image| %>
+          <%= image_tag image.image %>
+        <% end %>
+      <% end %>
+  </div>
+</div>

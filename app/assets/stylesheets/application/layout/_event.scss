@@ -287,3 +287,73 @@
 .wrapper__dropdown p  {
     cursor: pointer;
 }
+
+.event-single  {
+    color: #1a1a1a;
+    font-family: $new-font-family;
+}
+
+.event-single__image img  {
+    object-fit: cover;
+    width: 660px;
+    height: 980px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.event-single__type--text  {
+  font-family: $new-font-family;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.event-single__headline  {
+    font-family: $new-font-family;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    color: #272223;
+    margin-bottom: 0;
+}
+
+.event-single__content  {
+    padding-top: 66px;
+    z-index: 1;
+}
+
+.event-single__header--content  {
+    padding-bottom: 32px;
+    padding-right: 504px;
+}
+
+.event-single__header  {
+    padding-bottom: 16px;
+}
+
+.event-single__text  {
+    width: 552px;
+}
+
+.event-single__text p  {
+    font-family: $new-font-family;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #272223;
+    margin-top: 38px;
+    margin-bottom: 0;
+}

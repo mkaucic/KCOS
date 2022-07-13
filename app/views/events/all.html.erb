@@ -15,7 +15,7 @@
     <div class="wrapper__date" id="wrapper__date">
       
     </div>
-    <div class="line--vertical"></div>
+    <div class="line__vertical"></div>
     <div class="wrapper__filter--text">
       Filtriranje prikaza
     </div>
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="wrapper__edge">
-    <div class="line--horizontal--dark"></div>
+    <div class="line__horizontal--dark"></div>
     <div class="wrapper__content">
       <% @event.each do |events| %>
         <% unless events.blank? %>
@@ -51,7 +51,7 @@
               <%=link_to events.price, "#", target: "_blank", class: 'btn btn--black text--uppercase btn--small text--center' %>
             </div>
           </div>
-          <div class="line--horizontal--light"></div>
+          <div class="line__horizontal--light"></div>
         <% end %>
       <% end %>
     </div>

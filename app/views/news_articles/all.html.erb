@@ -1,18 +1,83 @@
-<%= link_to news_articles_path do %>
-  <%= inline_svg 'icons/flag--black.svg' %>
-  Top novosti
-<% end %>
-<% @news.each do |news| %>
-  <% unless news.blank? %>
-    <% if news.respond_to?(:news_type) %>
-      <%= image_tag news.image unless news.image.blank? %>
-      <%=news.publish_date.to_formatted_s(:custom)  %>
-      <%=news.news_type%>
-      <%= link_to news.headline, news_article_path(news.slug) %>
-      <% unless news.brief.nil? %>
-        <%= sanitize news.brief %>
-      <% end %>
-      <% next %>
+<div class="news-all__wrapper">
+
+  <div class="news__top">
+    <%= link_to news_articles_path do %>
+      <div class="news__top--icon">
+        <%= inline_svg 'icons/star.svg' %>
+      </div>
+      <div class="news__top--text">
+        Top novosti
+      </div>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+  <div class="news-all__header">
+    <div class="wrapper__filter--text">
+      Filtriranje prikaza
+    </div>
+    <div class="wrapper__dropdown--content">
+      <div class="wrapper__triangle--down" onclick="dropdownFilter()"></div>
+      <div class="wrapper__dropdown" id="wrapper__dropdown">
+        <p>Uzlazno</p>
+        <p>Silazno</p>
+      </div>
+    </div>
+  </div>
+  <div class="line__horizontal--dark"></div>
+
+  <div class="news-all__list">
+    <div class="news-all__content">
+      <% @news.each do |news| %>
+        <% unless news.blank? %>
+          <% if news.respond_to?(:news_type) %>
+            <div class="news-all__content--package">
+              <div class="news-all__content--image">
+                <%= image_tag news.image unless news.image.blank? %>
+              </div>
+              <div class="news-all__content--flex">
+                <div class="news-all__content--header">
+                  <div class="news-all__content--date">
+                    <div class="news-all__content--date--icon">
+                      <%= image_tag 'icons/rectangle-date.png' %>
+                    </div>
+                    <div class="news-all__content--date--text">
+                      <%=news.publish_date.to_formatted_s(:custom)  %>
+                    </div>
+                  </div>
+                  <div class="news-all__content--type">
+                    <div class="news-all__content--type--icon">
+                      <%= inline_svg 'icons/rectangle-grids.svg' %>
+                    </div>
+                    <div class="news-all__content--type--text">
+                      <%=news.news_type%>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-all__content--title">
+                  <%= link_to news.headline, news_article_path(news.slug) %>
+                </div>
+                <div class="news-all__content--brief">
+                  <% unless news.brief.nil? %>
+                    <%= sanitize news.brief %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="line__horizontal--light news__line"></div>
+            <% next %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  function dropdownFilter() {
+    var x = document.getElementById("wrapper__dropdown");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+  }
+</script>

@@ -337,6 +337,18 @@
     padding-right: 504px;
 }
 
+.event-single__header--content a  {
+    font-family: $new-font-family;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: normal;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
 .event-single__header  {
     padding-bottom: 16px;
 }

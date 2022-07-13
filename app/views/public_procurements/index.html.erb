@@ -2,7 +2,7 @@
   <div class="public-procurements__nav">
     <div class="public-procurements__nav--top">
       <div class="public-procurements__title">Javna nabava</div>
-      <div class="line--vertical"></div>
+      <div class="line__vertical"></div>
       <div class="public-procurements__year">
         <% @pp_year.each do |year|  %>
           <%= year %>
@@ -10,7 +10,7 @@
       </div>
       <div class="public-procurements__triangle"></div>
     </div>
-    <div class="line--horizontal--dark">
+    <div class="line__horizontal--dark">
     </div>
   </div>
   <div class="public-procurements__flex">
@@ -25,7 +25,7 @@
               <%=link_to "Preuzmi", file.link_url, target: "_blank" %>
             </div>
           </div>
-          <div class="line--horizontal--light"></div>
+          <div class="line__horizontal--light"></div>
         <% end %>
       <% end %>
     <% end %>

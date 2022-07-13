@@ -279,3 +279,124 @@
     line-height: 2.29;
     letter-spacing: 2px;
 }
+
+.news__top--text  {
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #231f20;
+    text-transform: uppercase;
+}
+
+.news__top a  {
+    text-decoration: none;
+}
+
+.news__top a:hover  {
+    background-color: #9f9f9f;
+}
+
+.news-all__header div  {
+    margin-left: 0;
+}
+
+.news-all__header  {
+    margin-bottom: 22px;
+}
+
+.news-all__wrapper  {
+    color: #1a1a1a;
+    font-family: $new-font-family;
+}
+
+.news-all__content--package:first-of-type  {
+    margin-top: 64px;
+}
+
+.news-all__content--package:not(:first-child)  {
+    margin-top: 32px;
+}
+
+.news-all__content--package  {
+    margin-bottom: 32px;
+}
+
+.news__line  {
+    width: 100%;
+}
+
+.news-all__content--date--icon img  {
+    object-fit: contain;
+    position: static;
+    height: 20px;
+    width: 60px;
+}
+
+.wrapper__filter--text  {
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+}
+
+.news-all__content--date--text  {
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+}
+
+.news-all__content--type--text  {
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-transform: uppercase;
+}
+
+.news-all__content--title  {
+    margin-top: 22px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.news-all__content--title a  {
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-decoration: none;
+    color: #231f20;
+}
+
+.wrapper__dropdown p:hover  {
+    text-decoration: underline;
+}
+
+.news-all__content--brief  {
+    width: 551px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+}
+
+.news-all__content--image img  {
+    width: 264px;
+    position: static;
+}

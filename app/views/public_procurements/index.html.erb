@@ -3,12 +3,17 @@
     <div class="public-procurements__nav--top">
       <div class="public-procurements__title">Javna nabava</div>
       <div class="line__vertical"></div>
-      <div class="public-procurements__year">
+      <div class="public-procurements__year" id="public-procurements__year">
+        2022. godina
+      </div>
+      <div class="public-procurements__triangle" onclick="showList()"></div>
+      <div class="public-procurements__dropdown" id="public-procurements__dropdown">
         <% @pp_year.each do |year|  %>
-          <%= year %>
+        <li><a href="">
+          <%= year %>. godina
+        </a></li>
         <% end %>
       </div>
-      <div class="public-procurements__triangle"></div>
     </div>
     <div class="line__horizontal--dark">
     </div>
@@ -18,7 +23,7 @@
       <%@public_procurements.each do |file|  %>
         <% if file.year == year.to_i %>
           <div class="public-procurements__item">
-            <div class="public-procurements__file">
+            <div class="public-procurements__title">
               <%= file.title %>
             </div>
             <button class="public-procurements__button--save">
@@ -32,3 +37,34 @@
     <% end %>
   </div>
 </div>
+
+
+<script>
+
+function showList() {
+  var years = document.getElementById("public-procurements__dropdown");
+
+  if (years.style.display == "block") {
+    years.style.display = "none";
+  } else {
+    years.style.display = "block";
+  }
+}
+window.onclick = function (event) {
+  if (!event.target.matches('.public-procurements__triangle')) {
+    document.getElementById('public-procurements__dropdown')
+      .style.display = "none";
+  }
+}
+
+var option = document.getElementById("public-procurements__dropdown");
+var year = document.getElementById('public-procurements__year');
+
+option.addEventListener('click', function(e) {
+  e.preventDefault(); // don't navigate to <a> tag href
+  if (e.target.tagName === 'A') {
+    year.textContent = e.target.textContent;
+  }
+});
+
+</script>

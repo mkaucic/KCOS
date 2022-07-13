@@ -3,6 +3,11 @@
     font-family: $new-font-family;
 }
 
+.public-procurements  {
+    padding-right: 108px;
+    padding-top: 120px;
+    // width: 1272px;
+}
 
 .public-procurements__button--save  {
     background-color: black;
@@ -24,11 +29,6 @@
     font-style: normal;
     line-height: 2.29;
     letter-spacing: 2px;
-}
-
-.public-procurements__nav  {
-    padding-top: 120px;
-    padding-right: 108px;
 }
 
 .line__vertical  {
@@ -59,11 +59,19 @@
     border-style: solid;
     border-width: 6px 6px 0 6px;
     border-color: #1a1a1a transparent transparent transparent;
+    cursor: pointer;
 }
 
 .public-procurements__item  {
-    padding-right: 108px;
     padding-bottom: 24px;
+}
+
+.public-procurements__item:first-of-type  {
+    padding-top: 64px;
+  }
+
+.public-procurements__item:not(:first-child)  {
+    padding-top: 24px;
 }
 
 .line__horizontal--light  {

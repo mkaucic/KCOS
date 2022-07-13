@@ -1,27 +1,54 @@
-<% content_for :image, image_url(@news_article.image)%>
-<% content_for :description, seo_description((@news_article.brief.nil? ? @news_article.text : @news_article.brief)) %>
-<% content_for :title, "KC - " + @news_article.headline%>
-<%= link_to news_articles_path do %>
-  Povratak na Novosti
-<% end %>
-<%=@news_article.news_type %>
-<%=@news_article.headline %>
-<% if @news_article.news_article_images.blank? %>
-  <% unless @news_article.image.blank? %>
-    <%= image_tag @news_article.image %>
-  <% end %>
-<% else %>
-  <% @news_article.news_article_images.each do |image| %>
-    <%= image_tag image.image %>
-  <% end %>
-<% end %>
-<%=render_with_tags(@news_article.text) %>
-<% if @news_article.news_article_images.blank? %>
-  <% unless @news_article.image.blank? %>
-    <%= image_tag @news_article.image %>
-  <% end %>
-<% else %>
-  <% @news_article.news_article_images.each do |image| %>
-    <%= image_tag image.image %>
-  <% end %>
-<% end %>
+<div class="news-single">
+
+  <% content_for :image, image_url(@news_article.image)%>
+  <% content_for :description, seo_description((@news_article.brief.nil? ? @news_article.text : @news_article.brief)) %>
+  <% content_for :title, "KC - " + @news_article.headline%>
+
+
+  <div class="news-single__wrapper">
+    <div class="news-single__content">
+      <div class="news-single__header">
+      <div class="news-single__header--content">
+        <div class="news-single__rectangle wrapper__triangle--left"></div>
+        <%= link_to news_articles_path do %>
+          Povratak na Novosti
+        <% end %>
+      </div>
+      <div class="news-single__type">
+        <div class="news-single__type--icon">
+          <%= inline_svg 'icons/rectangle-grids.svg' %>
+        </div>
+        <div class="news-single__type--text">
+          <%=@news_article.news_type %>
+        </div>
+      </div>
+      <h2 class="news-single__headline">
+        <%=@news_article.headline %>
+      </h2>
+      <div class="news-single__text">
+        <%=@news_article.text.html_safe %>
+      </div>
+      <div class="news-single__line--horizontal"></div>
+      <div class="news-single__tickets">
+        <div class="news-single__tickets--text">
+          Osigurajte ulaznicu na vrijeme!
+        </div>
+        <button class="news-single__tickets--button">
+          Kupi ulaznicu
+        </button>
+      </div>
+      <div class="news-single__line--horizontal"></div>
+    </div>
+  </div>
+  <div class="news-single__image">
+    <% if @news_article.news_article_images.blank? %>
+      <% unless @news_article.image.blank? %>
+        <%= image_tag @news_article.image %>
+      <% end %>
+    <% else %>
+      <% @news_article.news_article_images.each do |image| %>
+        <%= image_tag image.image %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

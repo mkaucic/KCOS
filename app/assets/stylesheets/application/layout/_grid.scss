@@ -751,11 +751,6 @@
   padding-bottom: 32px;
 }
 
-// .event-single  {
-//   display: flex;
-//   flex-direction: row;
-// }
-
 .event-single__header  {
   display: flex;
   flex-direction: column;
@@ -766,18 +761,6 @@
   flex-direction: row;
   gap: 18px;
   align-items: center;
-}
-
-.event-single__header--content a  {
-  font-family: $new-font-family;
-  font-size: 13px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.15;
-  letter-spacing: normal;
-  color: #1a1a1a;
-  text-decoration: none;
 }
 
 .event-single__type  {
@@ -816,4 +799,46 @@
   flex-direction: row;
   align-items: center;
   gap: 16px;
+}
+
+.news-single__header  {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-single__header--content  {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
+}
+
+.news-single__type  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-single__wrapper  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; 
+}
+
+.news-single__content  {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.news-single__image  {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.news-single__tickets  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

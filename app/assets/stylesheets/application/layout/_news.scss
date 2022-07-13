@@ -144,3 +144,138 @@
     background-color: #9f9f9f;
     color: black;
 }
+
+.news-single__header--content a  {
+    font-family: $new-font-family;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: normal;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.news-single  {
+    color: #1a1a1a;
+    font-family: $new-font-family;
+}
+
+.news-single__image img  {
+    object-fit: cover;
+    max-width: 660px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.news-single__type--text  {
+  font-family: $new-font-family;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.news-single__headline  {
+    font-family: $new-font-family;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    color: #272223;
+    margin-bottom: 16px;
+}
+
+.news-single__content  {
+    padding-top: 66px;
+    z-index: 1;
+}
+
+.news-single__header--content  {
+    padding-bottom: 32px;
+    padding-right: 532px;
+}
+
+.news-single__header  {
+    padding-bottom: 16px;
+}
+
+.news-single__text  {
+    width: 552px;
+    margin-bottom: 36px;
+}
+
+.news-single__text p  {
+    font-family: $new-font-family;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #272223;
+    margin-top: 38px;
+    margin-bottom: 0;
+}
+
+.news-single__header--content a  {
+    font-family: $new-font-family;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: normal;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.news-single__line--horizontal  {
+    height: 1px;
+    width: 100%;
+    background-color: #231f20;
+}
+
+.news-single__tickets  {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.news-single__tickets--text  {
+    font-family: $new-font-family;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #231f20;
+}
+
+.news-single__tickets--button  {
+    background-color: black;
+    border-radius: 0;
+    height: 48px;
+    text-transform: uppercase;
+    padding: 0px;
+    text-decoration: none;
+    color: $white--true;
+    padding: 5px;
+    font-family: $new-font-family;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.29;
+    letter-spacing: 2px;
+}

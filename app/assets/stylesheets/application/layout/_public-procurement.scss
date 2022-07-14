@@ -6,7 +6,6 @@
 .public-procurements  {
     padding-right: 108px;
     padding-top: 120px;
-    width: 1272px;
 }
 
 .public-procurements__button--save  {
@@ -64,18 +63,17 @@
 
 .public-procurements__item  {
     padding-bottom: 24px;
-    border-bottom: 1px solid rgba(35,31,32,0.1);
 }
 
 .public-procurements__item:not(:first-child)  {
     padding-top: 24px;
 }
 
-// .line__horizontal--light  {
-//     height: 1px;
-//     width: 1272px;
-//     background-color: rgba(35, 31, 32, 0.1);
-// } 
+.line__horizontal--light  {
+    height: 1px;
+    width: 1272px;
+    background-color: rgba(35, 31, 32, 0.1);
+} 
 
 .public-procurements__year  {
     font-family: $new-font-family;

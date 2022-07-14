@@ -1,11 +1,68 @@
 <div class="navigation__links">
     <div class="navigation__links--big">
-        <%= active_link_to 'Događanja', events_path %>
-        <%= active_link_to 'Novosti / Blog', news_articles_path %>
-        <%= active_link_to 'O centru', about_us_path %>
+        <div class="navigation__links--events">
+            <div class="link__events--icon" id="link__events--icon">
+                <%= image_tag 'patterns/pattern_3.svg' %>
+            </div>
+            <div class="link__events--text" id="link__events--text">
+                <%= active_link_to 'Događanja', events_path %>
+            </div>
+        </div>
+        <div class="navigation__links--news">
+            <div class="link__news--icon" id="link__news--icon">
+                <%= image_tag 'patterns/pattern_4.svg' %>
+            </div>
+            <div class="link__news--text" id="link__news--text">
+                <%= active_link_to 'Novosti / Blog', news_articles_path %>
+            </div>
+        </div>
+        <div class="navigation__links--center">
+            <div class="link__center--icon" id="link__center--icon">
+                <%= image_tag 'patterns/pattern_5.svg' %>
+            </div>
+            <div class="link__center--text" id="link__center--text">
+                <%= active_link_to 'O centru', about_us_path %>
+            </div>
+        </div>
     </div>
     <div class="navigation__links--small">
         <%= active_link_to 'Javna nabava', public_procurements_path %>
         <%= active_link_to 'Kontakt', kontakt_path %>
     </div>
 </div>
+
+
+<script>
+
+const el1 = document.getElementById('link__events--text');
+const hiddenDiv1 = document.getElementById('link__events--icon');
+
+el1.addEventListener('mouseover', function handleMouseOver() {
+  hiddenDiv1.style.display = 'block';
+});
+el1.addEventListener('mouseout', function handleMouseOut() {
+  hiddenDiv1.style.display = 'none';
+});
+
+const el2 = document.getElementById('link__news--text');
+const hiddenDiv2 = document.getElementById('link__news--icon');
+
+el2.addEventListener('mouseover', function handleMouseOver() {
+  hiddenDiv2.style.display = 'block';
+});
+el2.addEventListener('mouseout', function handleMouseOut() {
+  hiddenDiv2.style.display = 'none';
+});
+
+const el3 = document.getElementById('link__center--text');
+const hiddenDiv3 = document.getElementById('link__center--icon');
+
+el3.addEventListener('mouseover', function handleMouseOver() {
+  hiddenDiv3.style.display = 'block';
+});
+el3.addEventListener('mouseout', function handleMouseOut() {
+  hiddenDiv3.style.display = 'none';
+});
+
+
+</script>

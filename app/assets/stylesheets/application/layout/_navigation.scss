@@ -162,10 +162,6 @@
   font-style: normal;
 }
 
-.navigation__header a:hover  {
-  color: rgb(141, 137, 137);
-}
-
 .navigation__links--big a  {
   font-size: 28px;
   line-height: 40px;
@@ -178,11 +174,40 @@
   letter-spacing: -1.56px;
 }
 
+.navigation__links--small a:hover  {
+  color: rgb(141, 137, 137);
+}
+
+.link__events--icon  {
+  display: none;
+  padding-top: 10px;
+  margin-right: 20px;
+  transition: all 1s ease-in-out;
+}
+
+.link__news--icon  {
+  display: none;
+  padding-top: 10px;
+  margin-right: 20px;
+  transition: all 1s ease-in-out;
+}
+
+.link__center--icon  {
+  display: none;
+  padding-top: 10px;
+  margin-right: 20px;
+  transition: all 1s ease-in-out;
+}
+
 .legal-links  {
   font-size: 13px;
   line-height: 24px;
   letter-spacing: normal;
   color: var(--black);
+}
+
+.legal-links a:hover  {
+  color: rgb(141, 137, 137);
 }
 
 .nav__desktop  {

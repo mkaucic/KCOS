@@ -151,6 +151,7 @@
 .events__all--wrapper  {
     color: black;
     font-family: $new-font-family;
+    padding-right: 108px;
 }
 
 .wrapper__triangle--left  {
@@ -190,8 +191,14 @@
     margin-left: 92px;
 }
 
-.wrapper__edge  {
-    padding-right: 108px;
+.wrapper__content  {
+    padding-right: 1rem;
+    overflow-y: auto;
+    direction: ltr;
+    scrollbar-color: #1a1a1a #e4e4e4;
+    scrollbar-width: thin;
+    max-height: 525px;
+    margin-top: 64px;
 }
 
 .wrapper__header  {

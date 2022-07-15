@@ -326,12 +326,9 @@
     font-family: $new-font-family;
 }
 
-.news-all__content--package:not(:first-child)  {
-    margin-top: 32px;
-}
-
 .news-all__content--package  {
     margin-bottom: 32px;
+    border-bottom: 1px solid rgba(35,31,32,0.1);
 }
 
 .news__line  {
@@ -407,4 +404,5 @@
 .news-all__content--image img  {
     width: 264px;
     position: static;
+    margin-bottom: 32px;
 }

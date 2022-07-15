@@ -224,8 +224,20 @@
     line-height: 1.75;
     letter-spacing: normal;
     color: #272223;
-    margin-top: 38px;
     margin-bottom: 0;
+}
+
+.news-single__scroll  {
+    overflow-y: auto;
+    direction: ltr;
+    scrollbar-color: #1a1a1a #e4e4e4;
+    scrollbar-width: thin;
+    max-height: 575px;
+    margin-top: 38px;
+}
+
+.news-single__section  {
+    width: 552px;
 }
 
 .news-single__header--content a  {
@@ -312,10 +324,6 @@
 .news-all__wrapper  {
     color: #1a1a1a;
     font-family: $new-font-family;
-}
-
-.news-all__content--package:first-of-type  {
-    margin-top: 64px;
 }
 
 .news-all__content--package:not(:first-child)  {

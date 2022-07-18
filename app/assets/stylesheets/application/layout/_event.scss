@@ -297,8 +297,12 @@
     display: inline-block;
 }
 
-.wrapper__dropdown p  {
-    cursor: pointer;
+.wrapper__dropdown button  {
+    background-color: #f1f1f1;  
+}
+
+.wrapper__dropdown button:hover  {
+    text-decoration: underline;
 }
 
 .event-single  {

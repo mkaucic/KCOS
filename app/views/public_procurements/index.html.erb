@@ -3,7 +3,7 @@
     <div class="public-procurements__nav--top">
       <div class="public-procurements__title">Javna nabava</div>
       <div class="line__vertical"></div>
-      <div class="public-procurements__year" id="public-procurements__year">
+      <div class="public-procurements__year year-select" id="public-procurements__year">
         2022. godina
       </div>
       <div class="public-procurements__triangle" onclick="showList()"></div>
@@ -22,10 +22,11 @@
     <% @pp_year.each do |year|  %>
       <%@public_procurements.each do |file|  %>
         <% if file.year == year.to_i %>
-          <div class="public-procurements__item">
+          <div class="public-procurements__item file">
             <div class="public-procurements__title">
               <%= file.title %>
             </div>
+            data-year="<%= file.year %>"
             <button class="public-procurements__button--save">
               <%=link_to "Preuzmi", file.link_url, target: "_blank" %>
             </div>
@@ -65,5 +66,30 @@ option.addEventListener('click', function(e) {
     year.textContent = e.target.textContent;
   }
 });
+
+
+const select = document.querySelector('.year-select');
+const files = document.querySelectorAll('.file');
+
+function filterFilesByYear(selectedYear) { // funkciji daš godinu
+  files.forEach(file => {
+    if (file.dataset.year === selectedYear) { // fajlovima koji imaju tu godinu u data atributu daš display block (ili flex, grid, šta god trebaš)
+      file.style.display = 'flex'
+    } else {
+      file.style.display = 'none' // ako nema, makneš
+    }
+  })
+}
+
+select.addEventListener('change', (event) => { // svaki put kad se odabere nova opcija u selectu
+  const selectedYear = e.target.value; // godina je u vrijednosti selecta
+  filterFilesByYear(selectedYear); // pozoveš funkciju
+})
+
+window.addEventListener('DOMContentLoaded', () => {
+  const selectedYear = select.value; // dohvatimo vrijednost selecta nakon što se DOM učitao
+  filterFilesByYear(selectedYear); // i opet pozovemo funkciju
+})
+
 
 </script>

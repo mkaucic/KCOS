@@ -2,35 +2,64 @@
 <div class="team__wrapper">
 <div class="team__name">
   <% @team.each_with_index do |member, index| %>
-    <button><%= member.name %></button>
+    <button class="team__name--tab"><%= member.name %></button>
   <% end %> 
 </div>
 
 <div class="team__content">
-<% @team.each_with_index do |member, index| %>
-    <div class ="team__image">
-    <% if member.team_images.blank? %>
-      <% unless member.image.blank? %>
-        <%= image_tag member.image %>
+  <% @team.each_with_index do |member, index| %>
+  <div class="team__tab">
+    <div class="team__image" id="team__image">
+      <% if member.team_images.blank? %>
+        <% unless member.image.blank? %>
+          <%= image_tag member.image %>
+        <% end %>
+      <% else %>
+        <% member.team_images.each do |team_image| %>
+          <%= image_tag team_image.image %>
+        <% end %>
       <% end %>
-    <% else %>
-      <% member.team_images.each do |team_image| %>
-        <%= image_tag team_image.image %>
-      <% end %>
-    <% end %>
-    </div>
-    <div class="team__role">
-      <%= member.role %>
-    </div>
-    <div class="team__selected">
-      tu stoji ime osobe
-    </div>
-    <div class="team__bio">
-      <%= sanitize member.bio.html_safe %>
+      </div>
+      <div class="team__role">
+        <%= member.role %>
+      </div>
+      <div class="team__selected">
+        <%= member.name %>
+      </div>
+      <div class="team__bio">
+        <%= sanitize member.bio.html_safe %>
+      </div>
     </div>
     <% end %>
   </div>
 </div>
+
+
+<script>
+
+const tabs = document.querySelectorAll('.team__name--tab');
+const contents = document.querySelectorAll('.team__tab');
+
+function removeActiveClasses() {  // svim tabovima i sadržajima maknemo is-active klasu
+  tabs.forEach(tab => tab.classList.remove('is-active'));
+  contents.forEach(content => content.classList.remove('is-active'));
+}
+
+function addActiveClasses(tab, content) { // damo is-active klasu određenom tabu i sadržaju
+  tab.classList.add('is-active');
+  content.classList.add('is-active');
+}
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    removeActiveClasses(); // prvo pozovemo funkciju koja će ukloniti active klase
+    addActiveClasses(tab, contents[index]); // pa ih dodamo kliknutom tabu i contentu koji ima index kliknutog taba
+  })
+})
+
+</script>
+
+
 
 <script>
     hiddenDiv3.style.display = 'block';

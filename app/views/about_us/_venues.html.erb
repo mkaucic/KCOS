@@ -1,54 +1,86 @@
-<h1>Prostori</h1>
-<div class="venues__wrapper">
-  <div class="venues__image">
-    <% @venues.each_with_index do |venue, index| %>
-      <% if venue.venue_images.blank? %>
-        <% unless venue.image.blank? %>
-          <%= image_tag venue.image %>
-        <% end %>
-      <% else %>
-        <% venue.venue_images.each do |venue_image| %>
-          <%= image_tag venue_image.image %>
+<div class="venues__header">
+  <h1>Prostori</h1>
+  <div class="venues__wrapper">
+    <div class="venues__image">
+      <% @venues.each_with_index do |venue, index| %>
+        <% if venue.venue_images.blank? %>
+          <% unless venue.image.blank? %>
+            <%= image_tag venue.image %>
+          <% end %>
+        <% else %>
+          <% venue.venue_images.each do |venue_image| %>
+            <%= image_tag venue_image.image %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-  
+</div>
   <div class="venues__flex">
     <div class="venues__places">
       <% @venues.each_with_index do |venue, index| %>
-        <button><%= venue.name %></button>
+        <button class="venues__places--tab" onclick=venueName(this)><%= venue.name %></button>
       <% end %> 
     </div>
     <div class="venues__bio">
-      <h3> Kapacitet </h3>
-      <div class="venues__capacity">
-        <% @venues.each_with_index do |venue, index| %>
-          <% unless venue.capacity_venues.blank? %>
-            <% venue.capacity_venues.each do |capacity| %>
-              <div class="capacity">
-                <div class="capacity__name">
-                  <%= capacity.name %>
-                </div>
-                <div class="capacity__value">
-                  <%= capacity.capacity %>
-                </div>
+      <div class="venues__content">
+        <h2 class="venues__name" id="venues__name"> </h2>
+        <h3> Kapacitet </h3>
+        <div class="venues__capacity">
+          <% @venues.each_with_index do |venue, index| %>
+            <div class="capacity__content">
+              <% venue.capacity_venues.each do |capacity| %>
+                  <div class="capacity">
+                    <div class="capacity__name">
+                      <%= capacity.name %>
+                    </div>
+                    <div class="capacity__value">
+                      <%= capacity.capacity %>
+                    </div>
+                  </div>
+                <% end %>
+              <div class="venues__description">
+                <%= venue.description %>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        <% end %>
-      </div>
-      <div class="venues__description">
-        <% @venues.each_with_index do |venue, index| %>
-          <%= venue.description.html_safe do |description| %>
-            <%= description.name %>
-          <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
+
+
+<script>
+
+const tabsVenues = document.querySelectorAll('.venues__places--tab');
+const contentsVenues = document.querySelectorAll('.capacity__content');
+const nameVenue = document.getElementById("venues__name");
+
+function removeActiveClassesVenues() {  // svim tabovima i sadržajima maknemo is-active klasu
+  tabsVenues.forEach(tab => tab.classList.remove('is-active'));
+  contentsVenues.forEach(content => content.classList.remove('is-active'));
+}
+
+function addActiveClassesVenues(tab, content) { // damo is-active klasu određenom tabu i sadržaju
+  tab.classList.add('is-active');
+  content.classList.add('is-active');
+}
+
+tabsVenues.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    removeActiveClassesVenues(); // prvo pozovemo funkciju koja će ukloniti active klase
+    addActiveClassesVenues(tab, contentsVenues[index]); // pa ih dodamo kliknutom tabu i contentu koji ima index kliknutog taba
+  })
+})
+
+function venueName(button)  {
+  var txt = button.innerText;
+  nameVenue.innerHTML = txt;
+}
+
+</script>
+
 
 <script>
     hiddenDiv3.style.display = 'block';

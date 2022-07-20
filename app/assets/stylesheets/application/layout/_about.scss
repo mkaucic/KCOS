@@ -188,7 +188,7 @@
     position: static;
 }
 
-.venues__places button  {
+.venues__places--tab  {
     font-family: $new-font-family;
     font-size: 14px;
     font-weight: 500;
@@ -198,14 +198,19 @@
     letter-spacing: normal;
     text-align: right;
     color: rgba(35, 31, 32, 0.4);
-    background-color: $white--true;
+    background-color: transparent;
     padding: 0;
     width: 127px;
+    z-index: 1;
 }
 
 .venues__places button:hover  {
     color: #1a1a1a;
     font-size: 16px;
+}
+
+.venues__places--tab.is-active  {
+    color: #1a1a1a;
 }
 
 .venues__capacity  {
@@ -224,6 +229,15 @@
 
 .capacity__value  {
     text-align: right;
+}
+
+.capacity__content  {
+    display: none;
+}
+
+.capacity__content.is-active  {
+    display: block;
+    z-index: 1;
 }
 
 .venues__bio  {
@@ -245,7 +259,21 @@
     color: black;
 }
 
-.venues__bio h3  {
+.venues__description  {
+    display: none;
+}
+
+.venues__description.is-active  {
+    display: block;
+}
+
+.venues__content  {
+    width: 264px;
+    position: relative;
+    bottom: 15px;
+}
+
+.venues__content h3  {
     color: rgba(35, 31, 32, 0.6);
     font-family: $new-font-family;
     font-size: 12px;
@@ -255,5 +283,17 @@
     line-height: 2.67;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-top: 30px;
+}
+
+.venues__name  {
+    font-family: $new-font-family;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    width: 350px;
 }

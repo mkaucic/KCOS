@@ -214,8 +214,7 @@
 }
 
 .venues__capacity  {
-    background-color: #f5f5f5;
-    padding: 10px 20px 10px 20px;
+    padding: 0;
     font-family: $new-font-family;
     font-size: 16px;
     font-weight: 600; 
@@ -240,6 +239,14 @@
     z-index: 1;
 }
 
+.capacity__grey  {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
 .venues__bio  {
     padding-right: 828px;
 }
@@ -257,14 +264,7 @@
     line-height: 1.75;  
     letter-spacing: normal;  
     color: black;
-}
-
-.venues__description  {
-    display: none;
-}
-
-.venues__description.is-active  {
-    display: block;
+    margin-top: 28px;
 }
 
 .venues__content  {

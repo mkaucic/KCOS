@@ -29,18 +29,20 @@
         <div class="venues__capacity">
           <% @venues.each_with_index do |venue, index| %>
             <div class="capacity__content">
-              <% venue.capacity_venues.each do |capacity| %>
-                  <div class="capacity">
-                    <div class="capacity__name">
-                      <%= capacity.name %>
+              <div class="capacity__grey">
+                <% venue.capacity_venues.each do |capacity| %>
+                    <div class="capacity">
+                      <div class="capacity__name">
+                        <%= capacity.name %>
+                      </div>
+                      <div class="capacity__value">
+                        <%= capacity.capacity %>
+                      </div>
                     </div>
-                    <div class="capacity__value">
-                      <%= capacity.capacity %>
-                    </div>
-                  </div>
-                <% end %>
+                  <% end %>
+                </div>
               <div class="venues__description">
-                <%= venue.description %>
+                <%= venue.description.html_safe %>
               </div>
             </div>
           <% end %>
